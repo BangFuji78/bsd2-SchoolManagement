@@ -18,10 +18,10 @@
 // $host = '127.0.0.1'; //host server mysql
 
 //Bang~Miun
-// $db = 'raport_ma'; //nama database
-// $user = 'root'; //nama user mysql
-// $pass = ''; //password user mysql
-// $host = '127.0.0.1'; //host server mysql
+$db = 'bsd2'; //nama database
+$user = 'root'; //nama user mysql
+$pass = ''; //password user mysql
+$host = '127.0.0.1'; //host server mysql
 
 $mysqli = new mysqli($host, $user, $pass, $db);
 
