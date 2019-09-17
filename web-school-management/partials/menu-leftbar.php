@@ -37,6 +37,8 @@
                                 <a href="images-cropper.html" class="dropdown-item">Images Cropper</a>
                             </div>
                         </li>
+                        <li class="nav-item"><a href="school-bus.php" role="button" aria-expanded="false" class="nav-link"><i class="fa big-icon fa-bus"></i> <span class="mini-dn">School Bus</span></a>
+                        </li>
                         <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-pie-chart"></i> <span class="mini-dn">Miscellaneous</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                             <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
                                 <a href="profile.html" class="dropdown-item">Profile</a>
