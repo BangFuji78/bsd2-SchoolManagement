@@ -15,6 +15,18 @@
         <![endif]-->
 
     <!-- Header top area start-->
+     <?php 
+        //tempat function berada 
+            // function test($mysqli){
+            //     $sql="SELECT * FROM `transport`";
+            //     $query=$mysqli->query($sql);
+            //     while ($result=$query->fetch_array()) {
+            //         echo var_dump($result);
+            //     }
+            // }contoh function
+        //
+
+     ?>
     <div class="wrapper-pro">
         <?php include 'partials/menu-leftbar.php' ?>
         <div class="content-inner-all">
@@ -82,6 +94,10 @@
             <!-- Breadcome End-->
             <!-- container start -->
             <div class="contact-clients-area mg-b-40">
+                <?php 
+                    //test($mysqli);contoh memanggil
+
+                 ?>
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">

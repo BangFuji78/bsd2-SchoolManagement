@@ -1,4 +1,9 @@
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php 
+        include 'library/functions.php'; //memanggil file functions.php pada folder library
+        include 'library/config_database.php'; //memanggil file config_database.php pada folder
+       
+     ?>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
 		============================================ -->
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">

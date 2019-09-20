@@ -15,6 +15,12 @@
         <![endif]-->
 
     <!-- Header top area start-->
+    <?php 
+        //tempat function berada 
+            
+        //
+
+     ?>
     <div class="wrapper-pro">
         <?php include 'partials/menu-leftbar.php' ?>
         <div class="content-inner-all">

@@ -14,9 +14,5 @@ function clearSQLInjection($mysqli, $data) {
 
   return $newData;
 }
-//tempat function
 
-//function CRUD(Master)
-
-//Function fitur
 ?>
