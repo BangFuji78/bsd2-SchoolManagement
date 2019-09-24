@@ -147,3 +147,8 @@
         ============================================ -->
     <script src="js/duallistbox/jquery.bootstrap-duallistbox.js"></script>
     <script src="js/duallistbox/duallistbox.active.js"></script>
+    <!-- form validate JS
+		============================================ -->
+    <script src="js/jquery.form.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/form-active.js"></script>

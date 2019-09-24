@@ -13,6 +13,7 @@
 }
 .login-bg{
 	background:#fff;
+	
 	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
 	padding:20px;
 }
@@ -72,10 +73,14 @@
 	font-weight:14px;
 	transition: all .4s ease 0s;
 }
+
+
 .login-button-pro .login-button.login-button-rg{
 	background:#B3B3B3;
 	margin-right:10px;
+	margin-left:10px;
 }
+
 .login-button-pro .login-button.login-button-rg:hover{
 	background:#303030;
 	transition: all .4s ease 0s;
@@ -84,6 +89,7 @@
 	background:#303030;
 	transition: all .4s ease 0s;
 }
+
 .forgot-password a{
 	color:#03a9f4;
 	font-size:13px;

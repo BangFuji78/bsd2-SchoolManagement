@@ -231,7 +231,7 @@ padding: 0
 	padding:18px 10px;
 }
 .header-right-info {
-	
+	display:inline-block;
 }
 .header-right-info ul.header-right-menu li{
 	display:inline-block;
@@ -1197,7 +1197,7 @@ ul.comment-action-st li a{
 .mapael .mapTooltip {
 	position: absolute;
 	background-color: #23c6c8;
-	moz-opacity: 0.70;
+	-moz-opacity: 0.70;
 	opacity: 0.70;
 	filter: alpha(opacity=70);
 	border-radius: 10px;
@@ -2649,7 +2649,7 @@ ul.profile-contact-menu {
     text-align: left;
 }
 .user-profile-post{
-	
+	color:blue;	
 }
 .user-profile-post-action .comment-action-st, .user-profile-post-action .comment-action-st.in {
     width: 140%;
@@ -3553,7 +3553,7 @@ ul.profile-contact-menu {
 	transition: all 0.3s;
 }
 .content-inner-all {
-    margin-left: 200px;
+    margin-left: 100px;
 	transition: all 0.3s;
 }
 .header-drl-controller-btn.btn-info{

@@ -86,9 +86,10 @@
                                 <a href="tab-menus.html" class="dropdown-item">Tab Menus</a>
                             </div>
                         </li>
-                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-files-o"></i> <span class="mini-dn">Pages</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-files-o"></i>
+                        <span class="mini-dn">Pages</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                             <div role="menu" class="dropdown-menu left-menu-dropdown pages-left-menu-std animated flipInX">
-                                <a href="login.html" class="dropdown-item">Login</a>
+                                <a href="login.php" class="dropdown-item">Login</a>
                                 <a href="register.html" class="dropdown-item">Register</a>
                                 <a href="captcha.html" class="dropdown-item">Captcha</a>
                                 <a href="checkout.html" class="dropdown-item">Checkout</a>

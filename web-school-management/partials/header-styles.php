@@ -108,3 +108,6 @@
     <!-- style CSS
         ============================================ -->
     <link rel="stylesheet" href="css/alerts.css">
+    <!-- form CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/form.css">
