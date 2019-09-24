@@ -6,46 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Login to This Site</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- favicon
-		============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-    <!-- Google Fonts
-		============================================ -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
-    <!-- Bootstrap CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Bootstrap CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <!-- adminpro icon CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/adminpro-custon-icon.css">
-    <!-- meanmenu icon CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/meanmenu.min.css">
-    <!-- mCustomScrollbar CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-    <!-- animate CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/animate.css">
-    <!-- normalize CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/normalize.css">
-    <!-- form CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/form.css">
-    <!-- style CSS
-		============================================ -->
-    <link rel="stylesheet" href="style.css">
-    <!-- responsive CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/responsive.css">
-    <!-- modernizr JS
-		============================================ -->
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <?php include 'partials/header-styles.php'; ?>
 </head>
 
 <body class="materialdesign">
@@ -62,7 +23,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-4"></div>
-                        <form id="adminpro-form" class="adminpro-form">
+                        <form id="adminpro-form" method="post" class="adminpro-form">
                             <div class="col-lg-4">
                                 <div class="login-bg">
                                     <div class="row">
@@ -98,7 +59,7 @@
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="login-input-area">
-                                                <input type="email" name="username" />
+                                                <input type="text" name="username" />
                                                 <i class="fa fa-envelope login-user" aria-hidden="true"></i>
                                             </div>
                                         </div>
@@ -141,11 +102,10 @@
                                     </div>
                                    
                                     <div class="col-lg-12">
-                                            <div class="login-button-pro">
-                                                <center>
+                                            <div class="login-button-pro " >
                                                     <!-- <button type="submit" class="login-button login-button-rg">Register</button> -->
-                                                    <button type="submit" class="login-button login-button-lg">Log in</button>
-                                                </center>   
+                                                    <button type="submit" name="login" class="form-control login-button login-button-lg ">Log in</button>
+                                                
                                             </div>
                                         </div>
                                 
@@ -153,6 +113,15 @@
                                 </div>
                             </div>
                         </form>
+                        <?php
+                            if(isset($_POST['login'])){
+                                $data=$_POST;
+                                if($data['username']==="admin" && $data['password']==="1234"){
+                                    gotoRedirect("index.php",0);
+                                    echo "masuk";
+                                }
+                            }
+                        ?>
                         <div class="col-lg-4"></div>
                     </div>
                 </div>
