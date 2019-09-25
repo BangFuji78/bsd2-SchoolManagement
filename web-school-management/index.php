@@ -26,7 +26,7 @@
         <div class="content-inner-all">
             <?php include 'partials/header-menu1.php'; ?>
             <!-- Breadcome start-->
-            <!-- <div class="breadcome-area mg-b-30 small-dn">
+            <div class="breadcome-area mg-b-30 small-dn">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
@@ -53,11 +53,11 @@
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
             <!-- Breadcome End-->
             <?php include 'partials/header-menu-mobile.php'; ?>
             <!-- Breadcome start-->
-           <!--  <div class="breadcome-area des-none">
+            <div class="breadcome-area des-none">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -84,7 +84,7 @@
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
             <!-- Breadcome End-->
             <!-- container start -->
             <!-- container end -->

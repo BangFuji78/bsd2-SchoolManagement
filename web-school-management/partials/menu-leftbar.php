@@ -18,11 +18,11 @@
                         <a href="widgets.html" class="dropdown-item">Widgets</a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-envelope"></i> <span class="mini-dn">Mailbox</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-dollar"></i> <span class="mini-dn">Keuangan</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                     <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
-                        <a href="inbox.html" class="dropdown-item">Inbox</a>
-                        <a href="view-mail.html" class="dropdown-item">View Mail</a>
-                        <a href="compose-mail.html" class="dropdown-item">Compose Mail</a>
+                        <a href="keuangan-home.php" class="dropdown-item">Beranda</a>
+                        <a href="view-mail.html" class="dropdown-item">Pembayaran</a>
+                        <a href="compose-mail.html" class="dropdown-item">Biaya</a>
                     </div>
                 </li>
                 <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-flask"></i> <span class="mini-dn">Interface</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>

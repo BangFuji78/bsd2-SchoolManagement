@@ -152,3 +152,7 @@
     <script src="js/jquery.form.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/form-active.js"></script>
+    <!-- flot JS
+        ============================================ -->
+    <script src="js/flot/Chart.min.js"></script>
+    <script src="js/flot/dashtwo-flot-active.js"></script>
