@@ -24,9 +24,9 @@
     <div class="wrapper-pro">
         <?php include 'partials/menu-leftbar.php' ?>
         <div class="content-inner-all">
-             <?php include 'partials/header-menu1.php'; ?>
-             <!-- Breadcome start-->
-            <div class="breadcome-area mg-b-30 small-dn">
+            <?php include 'partials/header-menu1.php'; ?>
+            <!-- Breadcome start-->
+            <!-- <div class="breadcome-area mg-b-30 small-dn">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
@@ -42,7 +42,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <ul class="breadcome-menu">
-                                            <li><a href="index.php">Home</a> <span class="bread-slash">/</span>
+                                            <li><a href="#">Home</a> <span class="bread-slash">/</span>
                                             </li>
                                             <li><span class="bread-blod">Dashboard</span>
                                             </li>
@@ -53,11 +53,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- Breadcome End-->
             <?php include 'partials/header-menu-mobile.php'; ?>
             <!-- Breadcome start-->
-            <div class="breadcome-area des-none">
+           <!--  <div class="breadcome-area des-none">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -84,14 +84,14 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- Breadcome End-->
             <!-- container start -->
             <!-- container end -->
         </div>
     </div>
     <!-- Footer Start-->
-    <div class="footer-copyright-area">
+    <!-- <div class="footer-copyright-area">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
@@ -101,7 +101,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Footer End-->
     <!-- Chat Box Start-->
    <!--  <div class="chat-list-wrap">
