@@ -10,7 +10,8 @@
     <style>
     table thead tr th {
         text-align: center;
-        align-items: center;
+        align-content: center;
+        vertical-align: middle;
     }
     </style>
 </head>
@@ -196,38 +197,57 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>
-                                                         <div class="col-lg-12 btn-default" style="border-radius: 10px;background-color: yellow; text-align: center;">
-                                                           Belum
-                                                        </div>
-                                                    </td>
-                                                    <td>Mamun</td>
-                                                    <td>Pembayaran bulan Juli</td>
-                                                    <td>
-                                                        <div class="col-lg-12 btn-primary" style="border-radius: 20px;" >
-                                                            <?php 
-                                                            echo formatUang(10000);
-                                                             ?>     
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="col-lg-12 btn-default" style="border-radius: 10px;background-color: greenyellow; text-align: center;">
-                                                           Terbayar
-                                                        </div>
-                                                    </td>
-                                                    <td>Mamun</td>
-                                                    <td>Pembayaran bulan Juli</td>
-                                                    <td>
-                                                        <div class="col-lg-12 btn-primary" style="border-radius: 20px;" >
+                                                <?php 
+                                                    $recentInv="SELECT * FROM invoice order by from_unixtime(`creation_timestamp`, '%Y %D %M %H:%i:%s')";
+                                                    //convert unix timestamp to format date
+                                                    $queryInv=$mysqli->query($recentInv);
+                                                    while ( $invRes=$queryInv->fetch_array()) {
+                                                        ?>
+                                                        <tr>
+                                                            <td>
+                                                                 <div class="col-lg-12 btn-default" style="
+                                                                        border-radius: 10px;
+                                                                        background-color: 
+                                                                        <?php 
+                                                                            if($invRes['status']==='pending'){
+                                                                                echo "yellow";
+                                                                            }else{
+                                                                                echo "greenyellow";
+                                                                            }
+                                                        
+                                                                         ?>;
+                                                                        text-align: center;">
+                                                                   <?php 
+                                                                            if($invRes['status']==='pending'){
+                                                                                echo "Belum";
+                                                                            }else{
+                                                                                echo "Terbayar";
+                                                                            }
+                                                        
+                                                                         ?>
+                                                                </div>
+                                                            </td>
+                                                            <td>
                                                                 <?php 
-                                                                echo formatUang(10000000);
-                                                                 ?>     
-                                                        </div>
-                                                    </td>
-                                                </tr>
+                                                                $namaMurid="SELECT `student_id`, `name` FROM `student` WHERE `student_id`='".$invRes['student_id']."'";
+                                                                $queryNM=$mysqli->query($namaMurid);
+                                                                $resultNM=$queryNM->fetch_assoc();
+                                                                echo $resultNM['name'];
+
+                                                                 ?>
+                                                            </td>
+                                                            <td><?php echo $invRes['title']; ?></td>
+                                                            <td>
+                                                                <div class="col-lg-12 btn-primary" style="border-radius: 20px;" >
+                                                                    <?php 
+                                                                    echo formatUang($invRes['due']);
+                                                                     ?>     
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                <?php
+                                                    }
+                                                 ?>
                                             </tbody>
                                         </table>
                                     </div>
@@ -258,42 +278,46 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                            <?php 
+                                                $recentExp="SELECT * FROM `payment` WHERE `payment_type` = 'expense' order by from_unixtime(`timestamp`, '%Y %D %M %H:%i:%s')";
+                                                $qExp=$mysqli->query($recentExp);
+                                                while ($expRes=$qExp->fetch_array()) {
+                                            ?>
                                                 <tr>
-                                                    <td>Mamun</td>
+                                                    <td><?php echo $expRes['title']; ?></td>
                                                     <td>
                                                         <div class="col-lg-12 btn-primary" style="border-radius: 10px;background-color: purple;">
-                                                           Gaji Guru
+                                                           <?php 
+                                                            $ket="SELECT * FROM `expense_category` where `expense_category_id` ='".$expRes['expense_category_id']."'";
+                                                            $qKet=$mysqli->query($ket);
+                                                            $rket=$qKet->fetch_assoc();
+                                                            echo $rket['name'];
+                                                           ?>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <?php 
-                                                        echo formatUang(10000);
+                                                        echo formatUang($expRes['amount']);
                                                          ?>
                                                     </td>
                                                     <td>
                                                         <div class="col-lg-12 btn-primary" style="border-radius: 10px;text-align: center; background-color: darkblue; color: white;">
-                                                            cash
+                                                            <?php 
+                                                                if($expRes['method']==='1'){
+                                                                    echo "cash";
+                                                                }elseif ($expRes['method']==='2') {
+                                                                   echo "check";
+                                                                }elseif ($expRes['method']==='3') {
+                                                                   echo "card";
+                                                                }
+                                                             ?>
                                                         </div>
                                                     </td>  
                                                 </tr>
-                                                <tr>
-                                                    <td>Mamun</td>
-                                                    <td>
-                                                        <div class="col-lg-12 btn-primary" style="border-radius: 10px;background-color: purple;">
-                                                           Gaji Guru
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <?php 
-                                                        echo formatUang(10000);
-                                                         ?>
-                                                    </td>
-                                                    <td>
-                                                        <div class="col-lg-12 btn-primary" style="border-radius: 10px;text-align: center; background-color: darkblue; color: white;">
-                                                            cash
-                                                        </div>
-                                                    </td>
-                                                </tr>
+
+                                            <?php
+                                                }
+                                             ?>
                                             </tbody>
                                         </table>
                                     </div>
