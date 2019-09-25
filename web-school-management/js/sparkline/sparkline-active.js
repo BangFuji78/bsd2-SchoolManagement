@@ -69,12 +69,13 @@
 	 $('.sparklineadminpro').sparkline([ [1], [2], [3], [4, 2], [3], [5, 3] ], { type: 'bar', barColor: '#03a9f4',
         negBarColor: '#303030',});
 	
+
 	
 	
 
 	var sparklineCharts = function(){
 			var gradientColors = ['green', 'orange', 'red'];
-		 $("#sparkline22").sparkline([34, 43, 43, 35, 44, 32, 44, 52], {
+		 $("#sparkline22").sparkline([34, 100, 43, 35, 100, 44, 52], {
 			 type: 'line',
 			 width: '100%',
 			 height: '60',
@@ -82,7 +83,7 @@
              fillColor: '#f4f4f4'
 		 });
 
-		 $("#sparkline23").sparkline([24, 43, 43, 55, 44, 62, 44, 72], {
+		 $("#sparkline23").sparkline([24, 100, 43, 55, 44, 62, 44, 72], {
 			 type: 'line',
 			 width: '100%',
 			 height: '60',
@@ -90,7 +91,7 @@
 			 fillColor: "#ebebeb"
 		 });
 
-		 $("#sparkline24").sparkline([74, 43, 23, 55, 54, 32, 24, 12], {
+		 $("#sparkline24").sparkline([74, 43, 23, 54, 32, 24, 12], {
 			 type: 'line',
 			 width: '100%',
 			 height: '60',

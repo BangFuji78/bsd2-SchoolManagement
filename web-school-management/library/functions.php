@@ -14,5 +14,14 @@ function clearSQLInjection($mysqli, $data) {
 
   return $newData;
 }
+function formatUang($jumlahUang){
+	$hasil_rupiah = "Rp " . number_format($jumlahUang,0,',','.');
+	return $hasil_rupiah;
+}
+function percent($a,$b){
+	$percent=($a/$b)*100;
+	return $percent;
+}
+
 
 ?>
