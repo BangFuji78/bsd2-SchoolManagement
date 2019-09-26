@@ -22,7 +22,7 @@
                     <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
                         <a href="keuangan-home.php" class="dropdown-item">Beranda</a>
                         <a href="view-mail.html" class="dropdown-item">Pembayaran</a>
-                        <a href="compose-mail.html" class="dropdown-item">Biaya</a>
+                        <a href="keuangan-biaya.php" class="dropdown-item">Biaya</a>
                     </div>
                 </li>
                 <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-flask"></i> <span class="mini-dn">Interface</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
