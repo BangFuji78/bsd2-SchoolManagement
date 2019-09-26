@@ -107,7 +107,9 @@
                                 </ul>
                                 <div class="tab-content">
                                     <div id="TabExpense" class="tab-pane in active animated flipInX custon-tab-style1">
-                                        <h1>Expense</h1>
+                                    <div class="button-ap-list responsive-btn">    
+                                    <h3>Expense</h3>
+                                        <button type="button" class="btn btn-custon-rounded-four btn-primary">New Expense</button>
                                             <table id="table" data-toggle="table">
                                                         <thead>
                                                             <tr>
@@ -117,27 +119,31 @@
                                                                 <th data-field="jumlah">Amount</th>
                                                                 <th data-field="method">Method</th>
                                                                 <th data-field="date">Date</th>
-                                                                <th data-field="option">option</th>
+                                                                <th data-field="option">Option</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                         
                                                     </tbody>
                                                     </table>
+                                        </div>
                                     </div>                                
                                     <div id="TabCat" class="tab-pane animated flipInX custon-tab-style1">
-                                        <h1>Category</h1>
+                                    <div class="button-ap-list responsive-btn">
+                                        <h3>Category</h3>
+                                        <button type="button" class="btn btn-custon-rounded-four btn-primary">New Category</button>
                                             <table id="table" data-toggle="table">
                                                         <thead>
                                                             <tr>
                                                                 <th data-field="name">Name</th>
-                                                                <th data-field="option">option</th>
+                                                                <th data-field="option">Option</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>    
                                                     
                                                     </tbody>
-                                            </table>    
+                                            </table>
+                                        </div>    
                                     </div>
                                 </div>
             <!-- container end -->
