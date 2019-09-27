@@ -111,3 +111,13 @@
     <!-- form CSS
 		============================================ -->
     <link rel="stylesheet" href="css/form.css">
+  <?php
+    //session_start();
+    
+
+    if(isset($_SESSION['user_online'])){
+        
+    }else{
+      //gotoRedirect("login.php",0);
+    }
+  ?>
