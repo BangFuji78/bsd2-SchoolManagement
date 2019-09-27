@@ -95,7 +95,9 @@
             <!-- Breadcome End-->
             <!-- container start -->
             <div class="admintab-area">
+            <div class="login-form-area adminpro-pd mg-b-15">
                 <div class="container-fluid">
+                <div class="modal-bootstrap shadow-reset nt-mg-b-30">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="admintab-wrap mg-b-40">
@@ -132,7 +134,34 @@
                                     <div class="button-ap-list responsive-btn">
                                         <h3>Category</h3>
                                         <button type="button" class="btn btn-custon-rounded-four btn-primary">New Category</button>
-                                            <table id="table" data-toggle="table">
+                                            <!-- <div class="modal-bootstrap shadow-reset">
+                                                   <div class="modal-area-button">
+                                                        <a class="Primary mg-b-10" href="#" data-toggle="modal" data-target="#PrimaryModalhdbgcl">Primary</a>
+                                                        </div>
+                                                </div>
+                                                <div id="PrimaryModalhdbgcl" class="modal modal-adminpro-general default-popup-PrimaryModal fade" role="dialog">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header header-color-modal bg-color-1">
+                                                                <h4 class="modal-title">New Category</h4>
+                                                                <div class="modal-close-area modal-close-df">
+                                                                    <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <i class="fa fa-check modal-check-pro"></i>
+                                                                
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <a data-dismiss="modal" href="#">Cancel</a>
+                                                                <a href="#">Process</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                        
+                                        <table id="table" data-toggle="table">
                                                         <thead>
                                                             <tr>
                                                                 <th data-field="name">Name</th>
@@ -146,6 +175,7 @@
                                         </div>    
                                     </div>
                                 </div>
+</div>
             <!-- container end -->
         </div>
     </div>
