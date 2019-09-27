@@ -111,7 +111,7 @@
                                     <div id="TabExpense" class="tab-pane in active animated flipInX custon-tab-style1">
                                     <div class="button-ap-list responsive-btn">    
                                     <h3>Expense</h3>
-                                        <button type="button" class="btn btn-custon-rounded-four btn-primary">New Expense</button>
+                                    <a href="keuangan-biaya-newexpense.php"><button type="button" class="btn btn-custon-rounded-four btn-primary">New Expense</button></a>
                                             <table id="table" data-toggle="table">
                                                         <thead>
                                                             <tr>
@@ -133,7 +133,7 @@
                                     <div id="TabCat" class="tab-pane animated flipInX custon-tab-style1">
                                     <div class="button-ap-list responsive-btn">
                                         <h3>Category</h3>
-                                        <button type="button" class="btn btn-custon-rounded-four btn-primary">New Category</button>
+                                        <a href="keuangan-biaya-newkategori.php"><button type="button" class="btn btn-custon-rounded-four btn-primary">New Category</button></a>
                                             <!-- <div class="modal-bootstrap shadow-reset">
                                                    <div class="modal-area-button">
                                                         <a class="Primary mg-b-10" href="#" data-toggle="modal" data-target="#PrimaryModalhdbgcl">Primary</a>
