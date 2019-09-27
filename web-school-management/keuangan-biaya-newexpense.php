@@ -91,86 +91,80 @@
                     </div>
                 </div>
             </div> 
-
-<div class="content-i">
-    <div class="content-box">
-	<div class="element-wrapper">
-		<div class="os-tabs-w">
-		  </div>
-		 <div class="tab-content">
-			<div class="tab-pane active" id="single">
-			    <div class="row">
-                <h3> New Kategori </h3>
-			        <div class="col-sm-6">
-		<form action="" method="post" accept-charset="utf-8">		  
-		  <div class="row">
-		    <div class="col col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="form-group label-floating is-empty">
-                  	<label class="control-label">Date</label>
-                  	<input class="form-control" name="date" type="text" required="">
-                <span class="material-input"></span></div>
-            </div>
-            <div class="col col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="form-group label-floating is-empty">
-                  	<label class="control-label">Title</label>
-                  	<input class="form-control" name="title" type="text" required="">
-                <span class="material-input"></span></div>
-            </div>
-		    <div class="col col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="form-group label-floating is-select">
-                    <label class="control-label">Kategori</label>
-                    <div class="select">
-                        <select name="class_id" required="" onchange="return get_class_students(this.value)">
-                            <option value="">Select</option>
-                                                            <option value="1">Guru</option>
-                                                            <option value="2">Akademi</option>
-                                                            <option value="3">Paper</option>
-                                                            <option value="4">Lab</option>
-                                                    </select>
-                    </div>
-                </div>
-            </div>
-		    <div class="col col-lg-12 col-md-12 col-sm-12 col-12">
-				<div class="form-group label-floating is-empty">
-				    <label class="control-label">Description:</label>
-				    <textarea class="form-control" name="description" rows="3" required=""></textarea>
-				    <span class="material-input"></span>
-				<span class="material-input"></span></div>
-			</div>
-		</div>
-		</div>
-		</form></div>
-		<div class="col-sm-6">
-      <div class="element-box lined-success shadow">
-		  <h5 class="form-header"> Payment details </h5><br>
-    		  <div class="row">
-		        <div class="col col-lg-12 col-md-12 col-sm-12 col-12">
-                    <div class="form-group label-floating is-empty">
-                      	<label class="control-label">Amount</label>
-                  	    <input class="form-control" name="amount" type="text" required="">
-                    <span class="material-input"></span></div>
-                </div>
-            <div class="col col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="form-group label-floating is-select">
-                    <label class="control-label">Method</label>
-                    <div class="select">
-                        <select name="method" required="">
-                            <option value="">Select</option>
-                            <option value="3">Card</option>
-					        <option value="1">Cash</option>
-					        <option value="2">Check</option>
-                        </select>
-                    </div>
-                </div>
-            </div><br>
-		    <div class="col col-lg-12 col-md-12 col-sm-12 col-12">
-                <button class="btn btn-success btn-rounded" type="submit">Save</button>
-            </div>
-            </div>
-		</div>
-				</div>
-	    </div>
-          	</div>       
+            
+            <div class="container-fluid">
+                <div class="content-i">
+                    <div class="content-box">
+                    <div class="element-wrapper">
+                        <div class="os-tabs-w">
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="single">
+                                <div class="row">
+                                <h3> New Kategori </h3>
+                                    <div class="col-sm-6">
+                        <form action="" method="post" accept-charset="utf-8">		  
+                        <div class="row">
+                            <div class="col col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="form-group label-floating is-empty">
+                                    <label class="control-label">Date</label>
+                                    <input class="form-control" name="date" type="text" required="">
+                                <span class="material-input"></span></div>
+                            </div>
+                            <div class="col col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="form-group label-floating is-empty">
+                                    <label class="control-label">Title</label>
+                                    <input class="form-control" name="title" type="text" required="">
+                                <span class="material-input"></span></div>
+                            </div>
+                            <div class="col col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="form-group label-floating is-select">
+                                    <label class="control-label">Kategori</label>
+                                    <div class="select">
+                                        <select name="class_id" required="" onchange="return get_class_students(this.value)">
+                                            <option value="">Select</option>
+                                                                            <option value="1">Guru</option>
+                                                                            <option value="2">Akademi</option>
+                                                                            <option value="3">Paper</option>
+                                                                            <option value="4">Lab</option>
+                                                                    </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="form-group label-floating is-empty">
+                                    <label class="control-label">Description:</label>
+                                    <textarea class="form-control" name="description" rows="3" required=""></textarea>
+                                    <span class="material-input"></span>
+                                <span class="material-input"></span></div>
+                            </div>
+                                <div class="col col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="form-group label-floating is-empty">
+                                        <label class="control-label">Amount</label>
+                                        <input class="form-control" name="amount" type="text" required="">
+                                    <span class="material-input"></span></div>
+                                </div>
+                            <div class="col col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="form-group label-floating is-select">
+                                    <label class="control-label">Method</label>
+                                    <div class="select">
+                                        <select name="method" required="">
+                                            <option value="">Select</option>
+                                            <option value="3">Card</option>
+                                            <option value="1">Cash</option>
+                                            <option value="2">Check</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div><br>
+                            <div class="col col-lg-12 col-md-12 col-sm-12 col-12">
+                                <button class="btn btn-success btn-rounded" type="submit">Save</button>
+                            </div>
+                            </div>
+                        </div>
+                                </div>
+                        </div>
+                     </div>       
             </body>
             <?php include 'partials/footer-JS.php'; ?>
 </html>
