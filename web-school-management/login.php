@@ -1,6 +1,8 @@
 <!doctype html>
 <html class="no-js" lang="en">
-
+<?php 
+        session_start();
+?>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -119,9 +121,7 @@
     <!-- form CSS
 		============================================ -->
     <link rel="stylesheet" href="css/form.css">
-    <?php 
-        //session_start();
-    ?>
+    
 </head>
 
 <body class="materialdesign">
@@ -237,16 +237,25 @@
                                 $student=$mysqli->query("SELECT * FROM `student` where username='".$data['username']."' and password='".md5($data['password'])."'");
                                 $parent=$mysqli->query("SELECT * FROM `teacher` where username='".$data['username']."' and password='".md5($data['password'])."'");
                                 // echo var_dump();
-                                if(
-                                    $res=$admin->fetch_array() ||
-                                    $res=$teacher->fetch_array() ||
-                                    $res=$student->fetch_array() ||
-                                    $res=$parent->fetch_array()
-                                    ){
-                                     gotoRedirect("index.php",0);
-                                    $_session['user_online']=$res;
-                                    //echo var_dump($res);
+                                if($res=$admin->fetch_assoc()){
+                                    gotoRedirect("index.php",0);
+                                    $_SESSION['user_online']=$res;
+                                    // echo var_dump($_session['user_online']);
                                     
+                                }elseif($res=$teacher->fetch_assoc()){
+                                    gotoRedirect("index.php",0);
+                                    $_SESSION['user_online']=$res;
+                                    // echo var_dump($res['username']);
+                                    
+                                }elseif($res=$student->fetch_assoc()){
+                                    gotoRedirect("index.php",0);
+                                    $_SESSION['user_online']=$res;
+                                    // echo var_dump($res['username']);
+                                    
+                                }elseif($res=$parent->fetch_assoc()){
+                                    gotoRedirect("index.php",0);
+                                    $_SESSION['user_online']=$res;
+                                    // echo var_dump($res['username']);
                                 }else{
                                    echo '<h1>Login gagal</h1>';
                                 }

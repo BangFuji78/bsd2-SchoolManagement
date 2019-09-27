@@ -1,4 +1,5 @@
-    <?php 
+    <?php
+        session_start(); 
         include 'library/functions.php'; //memanggil file functions.php pada folder library
         include 'library/config_database.php'; //memanggil file config_database.php pada folder
        
@@ -112,12 +113,12 @@
 		============================================ -->
     <link rel="stylesheet" href="css/form.css">
   <?php
-    //session_start();
     
 
     if(isset($_SESSION['user_online'])){
         
     }else{
-      //gotoRedirect("login.php",0);
+      gotoRedirect("login.php",0);
+      echo var_dump($_SESSION['user_online']['username']);
     }
   ?>
