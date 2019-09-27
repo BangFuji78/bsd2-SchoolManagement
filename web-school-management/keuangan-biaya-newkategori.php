@@ -93,26 +93,28 @@
             </div> 
 
 <div class="content-i">
-    <div class="content-box">
-	<div class="element-wrapper">
-		<div class="os-tabs-w">
-			<div class="os-tabs-controls">
-                <h3> New Kategori </h3>
-                <form action="" method="post" accept-charset="utf-8">		  
-		        <div class="row">
-		       <div class="col col-lg-6 col-md-6 col-sm-6 col-6">
-                <div class="form-group label-floating is-empty">
-                  	<label class="control-label">Name</label>
-                  	<input class="form-control" name="name" type="text" required="">
-                <span class="material-input"></span></div>
-            </div><br>
-		    <div class="col col-lg-12 col-md-12 col-sm-12 col-12">
-                <button class="btn btn-success btn-rounded" type="submit">Save</button>
-            </div>
-            </div>
-		</div>
-				</div>
-	    </div>
+    <div class="container-fluid">
+        <div class="content-box">
+	        <div class="element-wrapper">
+		        <div class="os-tabs-w">
+                    <div class="os-tabs-controls">
+                        <h3> New Kategori </h3>
+                        <form action="" method="post" accept-charset="utf-8">		  
+                        <div class="row">
+                    <div class="col col-lg-6 col-md-6 col-sm-6 col-6">
+                        <div class="form-group label-floating is-empty">
+                            <label class="control-label">Name</label>
+                            <input class="form-control" name="name" type="text" required="">
+                        <span class="material-input"></span></div>
+                        </div><br>
+                        <div class="col col-lg-12 col-md-12 col-sm-12 col-12">
+                            <button class="btn btn-success btn-rounded" type="submit">Save</button>
+                        </div>
+                    </div>
+                </div>
+		    </div>
+        </div>
+    </div>
 </div>       
             </body>
             <?php include 'partials/footer-JS.php'; ?>
