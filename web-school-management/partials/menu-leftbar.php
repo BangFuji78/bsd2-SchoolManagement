@@ -25,6 +25,16 @@
                         <a href="keuangan-biaya.php" class="dropdown-item">Biaya</a>
                     </div>
                 </li>
+                 <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-users"></i> <span class="mini-dn">Users</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                    <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
+                        <a href="admin-user.php" class="dropdown-item">Admin</a>
+                        <a href="guru-user.php" class="dropdown-item">Guru</a>
+                        <a href="murid-user.php" class="dropdown-item">Murid</a>
+                        <a href="orangtua-user.php" class="dropdown-item">Orang Tua</a>
+                        <a href="akuntan-user.php" class="dropdown-item">Akuntan</a>
+                        <a href="perpustakawan-user.php" class="dropdown-item">Perpustakawan</a>
+                    </div>
+                </li>
                 <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-flask"></i> <span class="mini-dn">Interface</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                     <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
                         <a href="google-map.html" class="dropdown-item">Google Map</a>
