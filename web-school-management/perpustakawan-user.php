@@ -123,7 +123,6 @@
                                     </div>
                                 </div>
                             </div>
-                            
                     <?php
                         
                         if ($count/3===0 || $count===$resc) {
@@ -132,6 +131,58 @@
                         
                         }
                      ?>
+                    <!-- <div class="row">
+                       
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="contact-client-single ct-client-b-mg-30 ct-client-b-mg-30-n shadow-reset">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="contact-client-img">
+                                            <a href="#"><img src="img/notification/4.jpg" alt="" />
+                                            </a>
+                                            <h1><a id="group1" data-type="select" data-pk="1" data-value="5" data-source="/groups" data-title="Select group" href="#">Frontend</a></h1>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="contact-client-content">
+                                            <h2><a href="#">Grim Joy</a></h2>
+                                            <p><i class="fa fa-map-marker"></i> Riviera State C2/17</p>
+                                        </div>
+                                        <div class="contact-client-address">
+                                            <h3>Facebook, Inc.</h3>
+                                            <p class="address-client-ct"><strong>Address:</strong> Sector: #11, Road No: #17, House No: 06, Block: c2, Uttara, USA.</p>
+                                            <p><strong>Phone:</strong> (123) 456-7890</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="contact-client-single ct-client-ds-n shadow-reset">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="contact-client-img">
+                                            <a href="#"><img src="img/notification/3.jpg" alt="" />
+                                            </a>
+                                            <h1><a id="group2" data-type="select" data-pk="1" data-value="5" data-source="/groups" data-title="Select group" href="#">Backend</a></h1>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="contact-client-content">
+                                            <h2><a href="#">Prince Das</a></h2>
+                                            <p><i class="fa fa-map-marker"></i> Riviera State C2/17</p>
+                                        </div>
+                                        <div class="contact-client-address">
+                                            <h3>Linkedin, Inc.</h3>
+                                            <p class="address-client-ct"><strong>Address:</strong> Sector: #11, Road No: #17, House No: 06, Block: c2, Uttara, USA.</p>
+                                            <p><strong>Phone:</strong> (123) 456-7890</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                   
                 </div>
             </div>
             <!-- container end -->
