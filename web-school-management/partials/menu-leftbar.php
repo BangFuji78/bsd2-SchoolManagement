@@ -28,7 +28,7 @@
                  <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-users"></i> <span class="mini-dn">Users</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                     <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
                         <a href="admin-user.php" class="dropdown-item">Admin</a>
-                        <a href="guru-user.php" class="dropdown-item">Guru</a>
+                        <a href="teacher.php" class="dropdown-item">Guru</a>
                         <a href="murid-user.php" class="dropdown-item">Murid</a>
                         <a href="orangtua-user.php" class="dropdown-item">Orang Tua</a>
                         <a href="akuntan-user.php" class="dropdown-item">Akuntan</a>
@@ -96,7 +96,7 @@
                 </li>
                 <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-files-o"></i> <span class="mini-dn">Pages</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                     <div role="menu" class="dropdown-menu left-menu-dropdown pages-left-menu-std animated flipInX">
-                        <a href="login.html" class="dropdown-item">Login</a>
+                        <a href="teacher.php" class="dropdown-item">Teacher</a>
                         <a href="register.html" class="dropdown-item">Register</a>
                         <a href="captcha.html" class="dropdown-item">Captcha</a>
                         <a href="checkout.html" class="dropdown-item">Checkout</a>
