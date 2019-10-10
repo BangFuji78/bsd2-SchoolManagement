@@ -102,9 +102,23 @@
             </div>
             <!-- Breadcome End-->
             <!-- container start -->
+             <?php 
+                        if(isset($_POST['delete'])){
+                            if(del($_POST['del_id'],"admin",$mysqli)){
+                                goToRedirect('admin-user.php',0);
+                            }
+                        }elseif (isset($_POST['edit'])) {
+                            goToRedirect("tambah-admin.php?id=".base64_encode(date("d/m/y")."-".$_POST['del_id']));
+                        }
+                     ?>
             <div class="contact-clients-area mg-b-40">
                 <div class="container-fluid">
-                    <?php $sql="SELECT * FROM `admin` WHERE `messages` = '1' and `notify`= '1' and `information`= '1' and `marks`= '1' and`academic` = '1' and `attendance` = '1' and`schedules` = '1' and `news` = '1' and `library` = '1' and `be`= '1' and `acc` = '1' and `class` = '1' and`school` = '1' and`polls` = '1' and`settings`= '1' and `academic_se`= '1' and `files` = '1' and `users`= '1' ";
+
+                    <?php 
+
+
+
+                    $sql="SELECT * FROM `admin` WHERE status ='1'";
 
                         $qadmin=$mysqli->query($sql);
                         $resc=$qadmin->num_rows;
@@ -124,7 +138,7 @@
                                                 </a>
                                                 <h1>
                                                 <?php 
-                                                if ($resl['users']) {
+                                                if ($resl['owner_status']) {
                                                         echo "Super Admin";
                                                 }else{
                                                         echo "Admin";
@@ -134,11 +148,13 @@
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="contact-client-content">
-                                                <form action="">
-                                                    <button class="btn btn-default pull-right"><span class="fa fa-bars fa-3"></span></button>
-                                                    <input type="hidden" value="<?php echo $resl['admin_id']; ?>">
-                                                    <button class="btn btn-danger pull-right"><span class="fa fa-trash fa-3"></span></button>
+                                                <form method="post">
+                                                    
+                                                    <input type="hidden" name="del_id" value="<?php echo $resl['admin_id']; ?>">
+                                                    <button class="btn btn-default pull-right" name="edit" type="submit"><span class="fa fa-bars fa-3" ></span></button>
+                                                    <button name="delete" class="btn btn-danger pull-right" onclick="return confirm('Yakin ingin hapus data ini?')"><span class="fa fa-trash fa-3"></span></button>
                                                 </form>
+                                                
                                                 <h2><a href="#"><?php echo $resl['name']; ?></a></h2>
                                                 <p><i class="fa fa-map-marker"></i> <?php echo $resl['address']; ?></p>
                                             </div>
