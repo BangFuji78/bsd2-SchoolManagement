@@ -184,7 +184,11 @@
                                                             </div>
                                                         </div>
                                                     </form>
-                                                    <?php  ?>
+                                                    <?php  if(isset($_POST['tambah'])){
+                                                            $data=clearSQLInjection($mysqli, $_POST);
+                                                            
+
+                                                    }?>
                                                 </div>
                                             </div>
                                         </div>
