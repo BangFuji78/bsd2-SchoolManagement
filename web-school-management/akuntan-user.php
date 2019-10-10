@@ -42,11 +42,16 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <ul class="breadcome-menu">
-                                            <li><a href="#">Home</a> <span class="bread-slash">/</span>
+                                            <li><a href="#">Users</a> <span class="bread-slash">/</span>
                                             </li>
-                                            <li><span class="bread-blod">Dashboard</span>
+                                            <li><span class="bread-blod">Akuntan</span>
                                             </li>
                                         </ul>
+                                        <form method="post">
+                                            <button class="btn btn-primary pull-right">
+                                                <span class="fa fa-plus"></span> Tambah Akuntan
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -73,11 +78,16 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <ul class="breadcome-menu">
-                                            <li><a href="index.php">Home</a> <span class="bread-slash">/</span>
+                                            <li><a href="index.php">Users</a> <span class="bread-slash">/</span>
                                             </li>
-                                            <li><span class="bread-blod">Dashboard</span>
+                                            <li><span class="bread-blod">Akuntan</span>
                                             </li>
                                         </ul>
+                                        <form method="post">
+                                            <button class="btn btn-primary pull-right">
+                                                <span class="fa fa-plus"></span> Tambah Akuntan
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -89,7 +99,7 @@
             <!-- container start -->
             <div class="contact-clients-area mg-b-40">
                 <div class="container-fluid">
-                    <?php $sql="SELECT * FROM `admin` WHERE `messages` = '1' and `notify`= '1' and `information`= '1' and `marks`= '1' and`academic` = '1' and `attendance` = '1' and`schedules` = '1' and `news` = '1' and `library` = '1' and `be`= '1' and `acc` = '1' and `class` = '1' and`school` = '1' and`polls` = '1' and`settings`= '1' and `academic_se`= '1' and `files` = '1' and `users`= '1' ";
+                    <?php $sql="SELECT * FROM `admin` WHERE `acc` = '1' and `users`= '0' ";
                         $qadmin=$mysqli->query($sql);
                         $resc=$qadmin->num_rows;
                         $count=0;
@@ -111,6 +121,7 @@
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="contact-client-content">
+                                                <a href=""class="btn btn-default pull-right"><span class="fa fa-bars"></span></a>
                                                 <h2><a href="#"><?php echo $resl['name']; ?></a></h2>
                                                 <p><i class="fa fa-map-marker"></i> <?php echo $resl['address']; ?></p>
                                             </div>

@@ -42,11 +42,16 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <ul class="breadcome-menu">
-                                            <li><a href="#">Home</a> <span class="bread-slash">/</span>
+                                            <li><a href="#">Users</a> <span class="bread-slash">/</span>
                                             </li>
-                                            <li><span class="bread-blod">Dashboard</span>
+                                            <li><span class="bread-blod">Admin</span>
                                             </li>
                                         </ul>
+                                        <form method="post">
+                                            <button class="btn btn-primary pull-right">
+                                                <span class="fa fa-plus"></span> Tambah Admin
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -73,11 +78,16 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <ul class="breadcome-menu">
-                                            <li><a href="index.php">Home</a> <span class="bread-slash">/</span>
+                                            <li><a href="index.php">Users</a> <span class="bread-slash">/</span>
                                             </li>
-                                            <li><span class="bread-blod">Dashboard</span>
+                                            <li><span class="bread-blod">Admin</span>
                                             </li>
                                         </ul>
+                                        <form method="post">
+                                            <button class="btn btn-primary">
+                                                <span class="fa fa-plus"></span> tambah admin
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -90,27 +100,40 @@
             <div class="contact-clients-area mg-b-40">
                 <div class="container-fluid">
                     <?php $sql="SELECT * FROM `admin` WHERE `messages` = '1' and `notify`= '1' and `information`= '1' and `marks`= '1' and`academic` = '1' and `attendance` = '1' and`schedules` = '1' and `news` = '1' and `library` = '1' and `be`= '1' and `acc` = '1' and `class` = '1' and`school` = '1' and`polls` = '1' and`settings`= '1' and `academic_se`= '1' and `files` = '1' and `users`= '1' ";
+
                         $qadmin=$mysqli->query($sql);
                         $resc=$qadmin->num_rows;
                         $count=0;
                         while ($resl=$qadmin->fetch_array()) {
                             $count++;
-                            if($count==='1' || $count/3===0 ){
+                            if($count==='1' || $count/2===0 ){
                                 echo "<div class='row'>";
                             }
                             ?>
-                             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                             <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
                                 <div class="contact-client-single ct-client-b-mg-30 ct-client-b-mg-30-n shadow-reset">
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <div class="contact-client-img">
                                                 <a href="#"><img src="<?php echo $resl['fb_photo']; ?>" alt="" />
                                                 </a>
-                                                <h1>admin</h1>
+                                                <h1>
+                                                <?php 
+                                                if ($resl['users']) {
+                                                        echo "Super Admin";
+                                                }else{
+                                                        echo "Admin";
+                                                }
+                                                ?></h1>
                                             </div>
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="contact-client-content">
+                                                <form action="">
+                                                    <button class="btn btn-default pull-right"><span class="fa fa-bars fa-3"></span></button>
+                                                    <input type="hidden" value="<?php echo $resl['admin_id']; ?>">
+                                                    <button class="btn btn-danger pull-right"><span class="fa fa-trash fa-3"></span></button>
+                                                </form>
                                                 <h2><a href="#"><?php echo $resl['name']; ?></a></h2>
                                                 <p><i class="fa fa-map-marker"></i> <?php echo $resl['address']; ?></p>
                                             </div>
@@ -118,15 +141,16 @@
                                                 <h3></h3>
                                                 <p class="address-client-ct"><strong>Address:</strong> <?php echo $resl['address']; ?></p>
                                                 <p><strong>Phone:</strong> <?php echo $resl['phone']; ?></p>
+                                                <p><strong>Email:</strong> <?php echo $resl['email']; ?></p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
+
                     <?php
                         
-                        if ($count/3===0 || $count===$resc) {
+                        if ($count/2===0 || $count===$resc) {
                             echo "</div>";
                         }
                         
