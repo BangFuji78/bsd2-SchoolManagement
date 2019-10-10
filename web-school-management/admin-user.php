@@ -48,10 +48,15 @@
                                             </li>
                                         </ul>
                                         <form method="post">
-                                            <button class="btn btn-primary pull-right">
+                                            <input type="hidden" name="user" value="<?php echo $_SESSION['user_online']['username']; ?>">
+                                            <button class="btn btn-primary pull-right" type="submit" name="tambah">
                                                 <span class="fa fa-plus"></span> Tambah Admin
                                             </button>
                                         </form>
+                                        <?php if(isset($_POST['tambah'])){
+                                                $_SESSION['tambah']['user']=$_POST['user'];
+                                                goToRedirect('tambah-admin.php',0);
+                                            } ?>
                                     </div>
                                 </div>
                             </div>
