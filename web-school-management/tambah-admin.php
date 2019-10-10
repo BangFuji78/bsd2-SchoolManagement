@@ -176,14 +176,15 @@
                                                                 <div class="row">
                                                                     <div class="col-lg-12">
                                                                         <div class="login-horizental cancel-wp pull-right">
-                                                                            <button class="btn btn-white" type="submit">Cancel</button>
-                                                                            <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Save Change</button>
+                                                                            <button name="kembali" class="btn btn-white" type="submit">Kembali</button>
+                                                                            <button class="btn btn-sm btn-primary login-submit-cs" name="tambah" type="submit">Tambah</button>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </form>
+                                                    <?php  ?>
                                                 </div>
                                             </div>
                                         </div>
