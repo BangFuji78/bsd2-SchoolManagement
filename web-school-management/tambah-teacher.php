@@ -174,7 +174,7 @@
                                                         <?php  if(isset($_POST['tambah'])){
                                                                 $data=clearSQLInjection($mysqli, $_POST);
                                                                 if($_FILES['foto']['name']!=="") {
-                                                                    $save=fpadmin($_FILES,"admin");
+                                                                    $save=fpadmin($_FILES,"teacher");
                                                                 }else{
                                                                     alert("foto Profil belum terpilih");
                                                                     gotoRedirect('tambah-admin.php',0);
@@ -186,7 +186,8 @@
  
                                                                 if($qteacher=$mysqli->query($sqlTeacher)){
                                                                     unset($_SESSION['tambah']['user']);
-                                                                    gotoRedirect('admin-user.php',0);
+                                                                    alert("data guru telah tersimpan");
+                                                                    gotoRedirect('teacher.php',0);
                                                                 }
 
                                                               
