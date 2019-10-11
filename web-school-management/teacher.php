@@ -89,8 +89,9 @@
                                             </li>
                                             <li><span class="bread-blod">Teacher</span>
                                             </li>
-                                            <form method="post">
+                                            <form method="post" action="tambah-teacher.php">
                                                 <button class="btn btn-custon-rounded-three btn-primary pull-right">
+                                                  
                                                     <span class="fa fa-plus"></span> Tambah Teacher
                                                 </button>
                                             </form>
@@ -104,7 +105,7 @@
             </div>
             <!-- Breadcome End-->
             <?php include 'partials/header-menu-mobile.php'; ?>
-            <!-- Breadcome start-->
+            <!-- Breadcome start
             <div class="breadcome-area des-none">
                 <div class="container-fluid">
                         <div class="row">
@@ -129,7 +130,7 @@
                                             <form method="post">
                                                 <button class="btn btn-primary">
                                                     <span class="fa fa-plus"></span> tambah admin
-                                                </button>
+                                                </button>   
                                             </form>
                                         </div>
                                     </div>
@@ -138,7 +139,7 @@
                         </div>
                 </div>
             </div>
-            
+             -->
             <!-- Breadcome End-->
 <!-- container start -->
 <div class="contact-clients-area mg-b-40">
@@ -160,11 +161,9 @@
                                         <div class="col-lg-4">
                                             <div class="contact-client-img">
                                                 <a href="#"><img src="<?php echo $resl['fb_photo']; ?>" alt="" />
-                                                <?php echo var_dump($resl['fb_photo']);?>
+                                               <!-- <?php echo var_dump($resl['fb_photo']);?> -->
                                                 </a>
-                                                <h1>
-                                                 Teacher 
-                                                 </h1>
+                                               
                                             </div>
                                         </div>
                                         <div class="col-lg-8">
