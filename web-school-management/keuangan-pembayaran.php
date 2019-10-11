@@ -62,49 +62,20 @@
                 </div>
             </div>
             <!-- Breadcome End-->
-            <?php include 'partials/header-menu-mobile.php'; ?>
-            <!-- Breadcome start-->
-            <div class="breadcome-area des-none">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="breadcome-list map-mg-t-40-gl shadow-reset">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                        <div class="breadcome-heading">
-                                            <form role="search" class="">
-                                                <!-- <input type="text" placeholder="Search..." class="form-control">
-                                                <a href=""><i class="fa fa-search"></i></a> -->
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                        <ul class="breadcome-menu">
-                                            <li><a href="index.php">Keuangan</a> <span class="bread-slash">/</span>
-                                            </li>
-                                            <li><span class="bread-blod">Biaya</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Breadcome End-->
             <!-- container start -->
             <div class="admintab-area">
+            <div class="login-form-area adminpro-pd mg-b-15">
                 <div class="container-fluid">
+                <div class="modal-bootstrap shadow-reset nt-mg-b-30">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="admintab-wrap mg-b-40">
-                                <ul class="nav nav-tabs custom-menu-wrap custon-tab-menu-style1">
-                                    <!-- <li class="active"><a data-toggle="tab" href="#TabExpense"></span>Expenses</a>
+                                <!-- <ul class="nav nav-tabs custom-menu-wrap custon-tab-menu-style1">
+                                    <li class="active"><a data-toggle="tab" href="#TabExpense"></span>Expenses</a>
                                     </li>
                                     <li><a data-toggle="tab" href="#TabCat"></span>Category</a>
-                                    </li> -->
-                                </ul>
+                                    </li>
+                                </ul> -->
                                 <div class="tab-content">
                                     <div id="pembayaran_br" class="tab-pane in active animated flipInX custon-tab-style1">
                                     <div class="button-ap-list responsive-btn">    
@@ -123,8 +94,83 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
+                                                <?php 
+                                                    $recentInv="SELECT * FROM invoice order by from_unixtime(`creation_timestamp`, '%Y %D %M %H:%i:%s')";
+                                                    //convert unix timestamp to format date
+                                                    $queryInv=$mysqli->query($recentInv);
+                                                    while ( $invRes=$queryInv->fetch_array()) {
+                                                        ?>
+                                                        <tr>
+                                                            <td>
+                                                                 <div class="col-lg-12 btn-default" style="
+                                                                        border-radius: 10px;
+                                                                        background-color: 
+                                                                        <?php 
+                                                                            if($invRes['status']==='pending'){
+                                                                                echo "yellow";
+                                                                            }else{
+                                                                                echo "greenyellow";
+                                                                            }
                                                         
-                                                    </tbody>
+                                                                         ?>;
+                                                                        text-align: center;">
+                                                                   <?php 
+                                                                            if($invRes['status']==='pending'){
+                                                                                echo "Belum";
+                                                                            }else{
+                                                                                echo "Terbayar";
+                                                                            }
+                                                        
+                                                                         ?>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <?php 
+                                                                $namaMurid="SELECT `student_id`, `name` FROM `student` WHERE `student_id`='".$invRes['student_id']."'";
+                                                                $queryNM=$mysqli->query($namaMurid);
+                                                                $resultNM=$queryNM->fetch_assoc();
+                                                                echo $resultNM['name'];
+
+                                                                 ?>
+                                                            </td>
+                                                            <td>
+                                                                <?php 
+                                                                $namaKelas="SELECT `class_id`, `name` FROM `class` WHERE `class_id`='".$invRes['student_id']."'";
+                                                                $queryNM=$mysqli->query($namaKelas);
+                                                                $resultNM=$queryNM->fetch_assoc();
+                                                                echo $resultNM['name'];
+
+                                                                 ?>
+                                                            </td>
+                                                            <td><?php echo $invRes['title']; ?></td>
+                                                            <td>
+                                                                <div class="col-lg-12 btn-primary" style="border-radius: 20px;" >
+                                                                    <?php 
+                                                                    echo formatUang($invRes['due']);
+                                                                     ?>     
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                            <?php 
+                                                                $namaWaktu="SELECT FROM_UNIXTIME(timestamp, '%W %e %M, %Y') as waktu
+                                                                FROM `payment` WHERE `payment_id`='".$invRes['student_id']."'";
+                                                                $queryNM=$mysqli->query($namaWaktu);
+                                                                $resultNM=$queryNM->fetch_assoc();
+                                                                echo $resultNM['waktu'];
+                                                                 ?>
+
+                                                            </td>
+                                                            <td class="bolder">
+                                                            <button type="button" class="btn btn-custon-rounded-four btn-primary">Invoice</button>
+                                                            <button type="button" class="btn btn-custon-rounded-four btn-primary">Edit</button>
+                                                            <button type="button" class="btn btn-custon-rounded-four btn-primary">Delete</button>
+                                                            </td>
+                                                            </td>
+                                                        </tr>
+                                                <?php
+                                                    }
+                                                 ?>
+                                            </tbody>
                                                     </table>
                                         </div>
                                     </div>                                
