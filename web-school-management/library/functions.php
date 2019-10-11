@@ -83,6 +83,7 @@ function del($id,$table,$mysqli){
     $sql="DELETE FROM `".$table."` WHERE ".$table."_id='".$id."'";
     $qdel=$mysqli->query($sql);
     return $qdel;
+    //echo $sql;
   }
 }
 ?>

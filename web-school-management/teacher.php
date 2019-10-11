@@ -143,6 +143,15 @@
             <!-- Breadcome End-->
 <!-- container start -->
 <div class="contact-clients-area mg-b-40">
+                <?php
+                    if(isset($_POST['delete'])){
+                        if(del($_POST['del_id'],"teacher",$mysqli)){
+                            goToRedirect('teacher.php',0);
+                        }
+                    }elseif (isset($_POST['edit'])) {
+                        //goToRedirect("tambah-admin.php?id=".base64_encode(date("d/m/y")."-".$_POST['del_id']));
+                    }
+                ?>
                 <div class="container-fluid">
                     <?php $sql="SELECT * FROM `teacher` ";
 
@@ -168,13 +177,14 @@
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="contact-client-content">
-                                                <form action="">
+                                                <form method="post">
                                                     <button class="btn btn-default pull-right"><span class="fa fa-bars fa-3"></span></button>
-                                                    <input type="hidden" value="<?php echo $resl['teacher_id']; ?>">
-                                                    <button class="btn btn-danger pull-right"><span class="fa fa-trash fa-3"></span></button>
+                                                    <input type="hidden" name="del_id" value="<?php echo $resl['teacher_id']; ?>">
+                                                    <button name="delete" class="btn btn-danger pull-right" onclick="return confirm('Yakin ingin hapus data ini?')"><span class="fa fa-trash fa-3"></span></button>
                                                 </form>
                                                 <h2><a href="#"><?php echo $resl['name']; ?></a></h2>
                                                 <p><i class="fa fa-map-marker"></i> <?php echo $resl['address']; ?></p>
+                                                
                                             </div>
                                             <div class="contact-client-address">
                                                 <h3></h3>

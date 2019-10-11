@@ -63,7 +63,7 @@
                                                                             <label class="login2 pull-right pull-right-pro"><span class="fa fa-picture-o"></span>  Foto Profil</label>
                                                                         </div>
                                                                         <div class="col-lg-8">
-                                                                            <input type="file" accept="image/x-png,image/gif,image/jpeg" class="form-control" name="foto" />
+                                                                            <input type="file" accept="image/jpeg" class="form-control" name="foto" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -177,13 +177,13 @@
                                                                     $save=fpadmin($_FILES,"teacher");
                                                                 }else{
                                                                     alert("foto Profil belum terpilih");
-                                                                    gotoRedirect('tambah-admin.php',0);
+                                                                    gotoRedirect('tambah-teacher.php',0);
                                                                 }
                                                                 //echo var_dump($data);
                                                                 //echo "Thumbnail: <img src='".$save."'>";
                                                                 $sqlTeacher= "INSERT INTO `teacher`(`name`,
-                                                                 `birthday`, `sex`, `address`, `phone`,`email`, `password`, `username`,`fb_photo`) VALUES ('".$data['nama']."','".date_format(date_create($data['tlahir']))."','".($data['kelamin'])."','".$data['alamat']."','".$data['telp']."','".$data['email']."', '".md5($data['password'])."','".$data['username']."',".$save."')";
- 
+                                                                 `birthday`, `sex`, `address`, `phone`,`email`, `password`, `username`,`fb_photo`) VALUES ('".$data['nama']."','".date_format(date_create($data['tlahir']),"Y-m-d")."','".($data['kelamin'])."','".$data['alamat']."','".$data['telp']."','".$data['email']."', '".md5($data['password'])."','".$data['username']."','".$save."')";
+                                                                
                                                                 if($qteacher=$mysqli->query($sqlTeacher)){
                                                                     unset($_SESSION['tambah']['user']);
                                                                     alert("data guru telah tersimpan");
