@@ -1,4 +1,4 @@
-<?php
+ <?php
 //Bang~Eric
 // $db = 'raport_ma'; //nama database
 // $user = 'root'; //nama user mysql
@@ -18,7 +18,7 @@
 // $host = '127.0.0.1'; //host server mysql
 
 //Bang~Miun
-$db = 'school_management'; //nama database
+$db = 'sekolah'; //nama database
 $user = 'root'; //nama user mysql
 $pass = ''; //password user mysql
 $host = '127.0.0.1'; //host server mysql
