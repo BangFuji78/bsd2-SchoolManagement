@@ -23,8 +23,8 @@ function percent($a,$b){
 	return $percent;
 }
 function fpadmin($foto, $type){
-        $imagename = $_FILES['foto']['name'];
-        $source = $_FILES['foto']['tmp_name'];
+        $imagename = $foto['foto']['name'];
+        $source = $foto['foto']['tmp_name'];
         $target = "img/".$imagename;
         move_uploaded_file($source, $target);
 
@@ -83,6 +83,7 @@ function del($id,$table,$mysqli){
     $sql="DELETE FROM `".$table."` WHERE ".$table."_id='".$id."'";
     $qdel=$mysqli->query($sql);
     return $qdel;
+    //echo $sql;
   }
 }
 ?>

@@ -76,7 +76,7 @@
                                 
                                     <div class="col-lg-6">
                                         <div class="breadcome-heading" >
-                                        <form role="search" class="">
+                                            <form role="search" class="">
                                                 <input type="text" placeholder="Search..." class="form-control">
                                                 <a href=""><i class="fa fa-search"></i></a>
                                             </form>
@@ -89,8 +89,9 @@
                                             </li>
                                             <li><span class="bread-blod">Teacher</span>
                                             </li>
-                                            <form method="post">
+                                            <form method="post" action="tambah-teacher.php">
                                                 <button class="btn btn-custon-rounded-three btn-primary pull-right">
+                                                  
                                                     <span class="fa fa-plus"></span> Tambah Teacher
                                                 </button>
                                             </form>
@@ -104,7 +105,7 @@
             </div>
             <!-- Breadcome End-->
             <?php include 'partials/header-menu-mobile.php'; ?>
-            <!-- Breadcome start-->
+            <!-- Breadcome start
             <div class="breadcome-area des-none">
                 <div class="container-fluid">
                         <div class="row">
@@ -129,7 +130,7 @@
                                             <form method="post">
                                                 <button class="btn btn-primary">
                                                     <span class="fa fa-plus"></span> tambah admin
-                                                </button>
+                                                </button>   
                                             </form>
                                         </div>
                                     </div>
@@ -138,44 +139,54 @@
                         </div>
                 </div>
             </div>
-            
+             -->
             <!-- Breadcome End-->
 <!-- container start -->
 <div class="contact-clients-area mg-b-40">
+                <?php
+                    if(isset($_POST['delete'])){
+                        if(del($_POST['del_id'],"teacher",$mysqli)){
+                            goToRedirect('teacher.php',0);
+                        }
+                    }elseif (isset($_POST['edit-teacher'])) {
+                        goToRedirect('edit-teacher.php?',0);
+                    }
+                ?>
                 <div class="container-fluid">
                     <?php $sql="SELECT * FROM `teacher` ";
 
                         $qteacher=$mysqli->query($sql);
                         $resc=$qteacher->num_rows;
-                        $count=0;
+                        $count=1;
                         while ($resl=$qteacher->fetch_array()) {
-                            $count++;
-                            if($count==='1' || $count/2===0 ){
-                                echo "<div class='row'>";
-                            }
+                            
                             ?>
-                             <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
+                             <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 mg-b-40">
                                 <div class="contact-client-single ct-client-b-mg-30 ct-client-b-mg-30-n shadow-reset">
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <div class="contact-client-img">
                                                 <a href="#"><img src="<?php echo $resl['fb_photo']; ?>" alt="" />
-                                                <?php echo var_dump($resl['fb_photo']);?>
+                                               <!-- <?php echo var_dump($resl['fb_photo']);?> -->
+                                               <?php
+                                               echo var_dump($count);
+                                               
+                                               ?>
                                                 </a>
-                                                <h1>
-                                                 Teacher 
-                                                 </h1>
+                                               
                                             </div>
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="contact-client-content">
-                                                <form action="">
-                                                    <button class="btn btn-default pull-right"><span class="fa fa-bars fa-3"></span></button>
-                                                    <input type="hidden" value="<?php echo $resl['teacher_id']; ?>">
-                                                    <button class="btn btn-danger pull-right"><span class="fa fa-trash fa-3"></span></button>
+                                                <form method="post">
+                                                    <button class="btn btn-default pull-right" name="edit-teacher" type="submit"><span class="fa fa-bars fa-3"></a></span></button>
+                                                    <input type="hidden" name="del_id" value="<?php echo $resl['teacher_id']; ?>">
+                                                    <button name="delete" class="btn btn-danger pull-right" onclick="return confirm('Yakin ingin hapus data ini?')">
+                                                    <span class="fa fa-trash fa-3"></span></button>
                                                 </form>
                                                 <h2><a href="#"><?php echo $resl['name']; ?></a></h2>
                                                 <p><i class="fa fa-map-marker"></i> <?php echo $resl['address']; ?></p>
+                                                
                                             </div>
                                             <div class="contact-client-address">
                                                 <h3></h3>
@@ -190,10 +201,8 @@
 
                     <?php
                         //otomatis ke bawah.
-                        if ($count/2===0 || $count===$resc) {
-                            echo "</div>";
-                        }
-                        
+                       
+                        $count++;
                         }
                      ?>
                 </div>

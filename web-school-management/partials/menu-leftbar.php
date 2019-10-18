@@ -12,7 +12,7 @@
                 <li class="nav-item">
                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-home"></i> <span class="mini-dn">Home</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                     <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
-                        <a href="kalender-bulan.php" class="dropdown-item">Kalender</a>
+                        <a href="dashboard.html" class="dropdown-item">Dashboard v.1</a>
                         <a href="dashboard-2.html" class="dropdown-item">Dashboard v.2</a>
                         <a href="analytics.html" class="dropdown-item">Analytics</a>
                         <a href="widgets.html" class="dropdown-item">Widgets</a>
@@ -69,7 +69,6 @@
                 </li>
                 <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-table"></i> <span class="mini-dn">Data Tables</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                     <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
-                        <a href="kalender-bulan.php" class="dropdown-item">Kalender</a>
                         <a href="static-table.html" class="dropdown-item">Static Table</a>
                         <a href="data-table.html" class="dropdown-item">Data Table</a>
                     </div>

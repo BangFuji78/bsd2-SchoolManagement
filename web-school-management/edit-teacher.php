@@ -30,8 +30,8 @@
             <?php 
                 if(isset($_GET['id'])) {
                     include('edit-admin.php');
-                }elseif(!isset($_SESSION['tambah']['user'])){
-                    gotoRedirect('index.php',0);
+                //}elseif(!isset($_SESSION['tambah']['user'])){
+                   // gotoRedirect('index.php',0);
                 }else{
                     ?>
                 <!-- container start -->
@@ -42,7 +42,7 @@
                                 <div class="sparkline12-list shadow-reset mg-t-30">
                                     <div class="sparkline12-hd">
                                         <div class="main-sparkline12-hd">
-                                            <h1>Tambah Admin</h1>
+                                            <h1>Edit Guru</h1>
                                             <!-- <div class="sparkline12-outline-icon">
                                                 <span class="sparkline12-collapse-link"><i class="fa fa-chevron-up"></i></span>
                                                 <span><i class="fa fa-wrench"></i></span>
@@ -63,7 +63,7 @@
                                                                             <label class="login2 pull-right pull-right-pro"><span class="fa fa-picture-o"></span>  Foto Profil</label>
                                                                         </div>
                                                                         <div class="col-lg-8">
-                                                                            <input type="file" accept="image/x-png,image/gif,image/jpeg" class="form-control" name="foto" />
+                                                                            <input type="file" accept="image/jpeg" class="form-control" name="foto" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -73,7 +73,8 @@
                                                                             <label class="login2 pull-right pull-right-pro"><span class="fa fa-user"></span> Nama</label>
                                                                         </div>
                                                                         <div class="col-lg-8">
-                                                                            <input type="text" class="form-control" name="nama" />
+                                                                            <input type="text" class="form-control" name="nama"/>
+                                                                           <!-- <input type="text" class="form-control" name="nama" value="<?php echo $res1['name']; ?>"/> -->
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -145,13 +146,13 @@
                                                                 <div class="form-group-inner">
                                                                     <div class="row">
                                                                         <div class="col-lg-4">
-                                                                            <label class="login2 pull-right pull-right-pro"><span class="fa fa-id-card"></span> Jenis Akun</label>
+                                                                            <label class="login2 pull-right pull-right-pro"><span class="fa fa-id-card"></span> Jenis Kelamin</label>
                                                                         </div>
-                                                                        <div class="col-lg-8">
+                                                                         <div class="col-lg-8">
                                                                             <div class="form-select-list">
-                                                                                <select class="form-control custom-select-value" name="akun">
-                                                                                    <option value="0">admin</option>
-                                                                                    <option value="1">Super Admin</option>
+                                                                                <select class="form-control custom-select-value" name="kelamin">
+                                                                                    <option value="0">Laki Laki</option>
+                                                                                    <option value="1">Perempuan</option>
                                                                                 </select>
                                                                             </div>
                                                                         </div>
@@ -163,7 +164,7 @@
                                                                     <div class="row">
                                                                         <div class="col-lg-12">
                                                                             <div class="login-horizental cancel-wp pull-right">
-                                                                                <button name="kembali" class="btn btn-white" type="submit">Kembali</button>
+                                                                                <button name="kembali" class="btn btn-white" type="submit"><a href="teacher.php">Kembali</a></button>
                                                                                 <button class="btn btn-sm btn-primary login-submit-cs" name="tambah" type="submit">Tambah</button>
                                                                             </div>
                                                                         </div>
@@ -174,24 +175,25 @@
                                                         <?php  if(isset($_POST['tambah'])){
                                                                 $data=clearSQLInjection($mysqli, $_POST);
                                                                 if($_FILES['foto']['name']!=="") {
-                                                                    $save=fpadmin($_FILES,"admin");
+                                                                    $save=fpadmin($_FILES,"teacher");
                                                                 }else{
                                                                     alert("foto Profil belum terpilih");
-                                                                    gotoRedirect('tambah-admin.php',0);
+                                                                    gotoRedirect('tambah-teacher.php',0);
                                                                 }
                                                                 //echo var_dump($data);
                                                                 //echo "Thumbnail: <img src='".$save."'>";
-                                                                $sqlAdmin="INSERT INTO `admin`(`name`, `email`, `password`, `phone`, `address`, `owner_status`, `username`, `status`, `birthday`, `messages`, `notify`, `information`, `marks`, `academic`, `attendance`, `schedules`, `news`, `library`, `be`, `acc`, `class`, `school`, `polls`, `settings`, `academic_se`, `files`, `users`,`fb_photo`) VALUES ('".$data['nama']."','".$data['email']."','".md5($data['password'])."','".$data['telp']."','".$data['alamat']."','".$data['akun']."', '".$data['username']."','1','".date_format(date_create($data['tlahir']),"Y-m-d")."','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','".$save."')";
-                                                                    if($qadmin=$mysqli->query($sqlAdmin)){
-                                                                        unset($_SESSION['tambah']['user']);
-                                                                        gotoRedirect('admin-user.php',0);
-                                                                    }
+                                                                $sqlTeacher= "INSERT INTO `teacher`(`name`,
+                                                                 `birthday`, `sex`, `address`, `phone`,`email`, `password`, `username`,`fb_photo`) VALUES ('".$data['nama']."','".date_format(date_create($data['tlahir']),"Y-m-d")."','".($data['kelamin'])."','".$data['alamat']."','".$data['telp']."','".$data['email']."', '".md5($data['password'])."','".$data['username']."','".$save."')";
+                                                                
+                                                                if($qteacher=$mysqli->query($sqlTeacher)){
+                                                                    unset($_SESSION['tambah']['user']);
+                                                                    alert("data guru telah tersimpan");
+                                                                    gotoRedirect('teacher.php',0);
                                                                 }
 
-                                                                if(isset($_POST['kembali'])){
-                                                                    gotoRedirect('admin-user.php',0);
-                                                                }
-                                                                ?>
+                                                              
+                                                              
+                                                        }?>
                                                     </div>
                                                 </div>
                                             </div>
