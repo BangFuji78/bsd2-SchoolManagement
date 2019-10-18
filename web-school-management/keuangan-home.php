@@ -282,6 +282,7 @@
                                                 $recentExp="SELECT * FROM `payment` WHERE `payment_type` = 'expense' order by from_unixtime(`timestamp`, '%Y %D %M %H:%i:%s')";
                                                 $qExp=$mysqli->query($recentExp);
                                                 while ($expRes=$qExp->fetch_array()) {
+                                                    
                                             ?>
                                                 <tr>
                                                     <td><?php echo $expRes['title']; ?></td>
