@@ -17,6 +17,12 @@ $user = 'root'; //nama user mysql
 $pass = ''; //password user mysql
 $host = '127.0.0.1'; //host server mysql
 
+// //Bang~Miun
+// $db = 'sekolah'; //nama database
+// $user = 'root'; //nama user mysql
+// $pass = ''; //password user mysql
+// $host = '127.0.0.1'; //host server mysql
+
 //Bang~Miun
 // $db = 'school_management'; //nama database
 // $user = 'root'; //nama user mysql
