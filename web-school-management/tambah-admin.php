@@ -182,14 +182,16 @@
                                                                 //echo var_dump($data);
                                                                 //echo "Thumbnail: <img src='".$save."'>";
                                                                 $sqlAdmin="INSERT INTO `admin`(`name`, `email`, `password`, `phone`, `address`, `owner_status`, `username`, `status`, `birthday`, `messages`, `notify`, `information`, `marks`, `academic`, `attendance`, `schedules`, `news`, `library`, `be`, `acc`, `class`, `school`, `polls`, `settings`, `academic_se`, `files`, `users`,`fb_photo`) VALUES ('".$data['nama']."','".$data['email']."','".md5($data['password'])."','".$data['telp']."','".$data['alamat']."','".$data['akun']."', '".$data['username']."','1','".date_format(date_create($data['tlahir']),"Y-m-d")."','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','".$save."')";
-                                                                if($qadmin=$mysqli->query($sqlAdmin)){
-                                                                    unset($_SESSION['tambah']['user']);
-                                                                    gotoRedirect('admin-user.php',0);
+                                                                    if($qadmin=$mysqli->query($sqlAdmin)){
+                                                                        unset($_SESSION['tambah']['user']);
+                                                                        gotoRedirect('admin-user.php',0);
+                                                                    }
                                                                 }
 
-                                                              
-                                                              
-                                                        }?>
+                                                                if(isset($_POST['kembali'])){
+                                                                    gotoRedirect('admin-user.php',0);
+                                                                }
+                                                                ?>
                                                     </div>
                                                 </div>
                                             </div>
