@@ -42,7 +42,7 @@
                                 <div class="sparkline12-list shadow-reset mg-t-30">
                                     <div class="sparkline12-hd">
                                         <div class="main-sparkline12-hd">
-                                            <h1>Tambah Guru</h1>
+                                            <h1>Edit Guru</h1>
                                             <!-- <div class="sparkline12-outline-icon">
                                                 <span class="sparkline12-collapse-link"><i class="fa fa-chevron-up"></i></span>
                                                 <span><i class="fa fa-wrench"></i></span>
@@ -73,7 +73,8 @@
                                                                             <label class="login2 pull-right pull-right-pro"><span class="fa fa-user"></span> Nama</label>
                                                                         </div>
                                                                         <div class="col-lg-8">
-                                                                            <input type="text" class="form-control" name="nama" />
+                                                                            <input type="text" class="form-control" name="nama"/>
+                                                                           <!-- <input type="text" class="form-control" name="nama" value="<?php echo $res1['name']; ?>"/> -->
                                                                         </div>
                                                                     </div>
                                                                 </div>
