@@ -29,7 +29,7 @@
             <?php include 'partials/header-menu-mobile.php'; ?>
             <?php 
                 if(isset($_GET['id'])) {
-                    include('edit-admin.php');
+                    include('edit-teacher.php');
                 //}elseif(!isset($_SESSION['tambah']['user'])){
                    // gotoRedirect('index.php',0);
                 }else{

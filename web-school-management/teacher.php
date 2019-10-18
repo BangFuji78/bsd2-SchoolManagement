@@ -149,7 +149,7 @@
                             goToRedirect('teacher.php',0);
                         }
                     }elseif (isset($_POST['edit-teacher'])) {
-                        goToRedirect('edit-teacher.php?',0);
+                        goToRedirect('tambah-teacher.php?id='.base64_encode(date("d/m/y")."-".$_POST['del_id']),0);
                     }
                 ?>
                 <div class="container-fluid">
@@ -169,7 +169,7 @@
                                                 <a href="#"><img src="<?php echo $resl['fb_photo']; ?>" alt="" />
                                                <!-- <?php echo var_dump($resl['fb_photo']);?> -->
                                                <?php
-                                               echo var_dump($count);
+                                            //    echo var_dump($count);
                                                
                                                ?>
                                                 </a>
