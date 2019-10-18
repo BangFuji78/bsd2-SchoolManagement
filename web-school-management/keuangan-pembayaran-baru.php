@@ -100,18 +100,18 @@
                     <div class="select">
                         <select name="class_id" required="" onchange="return get_class_students(this.value)">
                             <option value="">Select</option>
-                                                            <option value="1">Head Start</option>
-                                                            <option value="2">Pre-kindergarden</option>
-                                                            <option value="3">Kindergarden</option>
-                                                            <option value="4">First grade</option>
-                                                            <option value="5">Second grade</option>
-                                                            <option value="6">Third grade</option>
-                                                            <option value="7">Fourth grade</option>
-                                                            <option value="8">Fifth grade</option>
-                                                            <option value="9">Sixth grade</option>
-                                                            <option value="10">Seventh grade</option>
-                                                            <option value="11">Eighth grade</option>
-                                                    </select>
+                            <option value="1"><select>
+			                    <?php
+			                        $query = "select * from combobox";
+			                        $hasil = mysql_query($query);
+			                        while ($qtabel = mysql_fetch_assoc($hasil))
+			                        {
+				                         echo '<option value="'.$qtabel['class'].'">'.$qtabel['class'].'</option>';				
+			                        }
+			                    ?>
+		                     </select>
+                            </option>
+                            <option value="2">Pre-kindergarden</option>
                     </div>
                 </div>
             </div>
@@ -169,9 +169,8 @@
                     <div class="select">
                         <select name="method" required="">
                             <option value="">Select</option>
-                            <option value="3">Card</option>
 					        <option value="1">Cash</option>
-					        <option value="2">Check</option>
+					        <option value="2">Kredit</option>
                         </select>
                     </div>
                 </div>
