@@ -29,7 +29,7 @@
                     <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
                         <a href="admin-user.php" class="dropdown-item">Admin</a>
                         <a href="teacher.php" class="dropdown-item">Guru</a>
-                        <a href="murid-user.php" class="dropdown-item">Murid</a>
+                        <a href="murid.php" class="dropdown-item">Murid</a>
                         <a href="orangtua-user.php" class="dropdown-item">Orang Tua</a>
                         <a href="akuntan-user.php" class="dropdown-item">Akuntan</a>
                         <a href="perpustakawan-user.php" class="dropdown-item">Perpustakawan</a>

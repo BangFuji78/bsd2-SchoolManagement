@@ -257,7 +257,11 @@
                                     $_SESSION['user_online']=$res;
                                     // echo var_dump($res['username']);
                                 }else{
-                                   echo '<h1>Login gagal</h1>';
+                                  // echo '<h1>Login gagal</h1>';
+
+                                   alert("Login Gagal");
+
+
                                 }
                                
                             }
