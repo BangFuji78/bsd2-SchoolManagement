@@ -89,7 +89,7 @@
                                             </li>
                                             <li><span class="bread-blod">Student</span>
                                             </li>
-                                            <form method="post" action="tambah-teacher.php">
+                                            <form method="post" action="tambah-murid.php">
                                                 <button class="btn btn-custon-rounded-three btn-primary pull-right">
                                                   
                                                     <span class="fa fa-plus"></span> Tambah Student
@@ -145,20 +145,20 @@
 <div class="contact-clients-area mg-b-40">
                 <?php
                     if(isset($_POST['delete'])){
-                        if(del($_POST['del_id'],"teacher",$mysqli)){
-                            goToRedirect('teacher.php',0);
+                        if(del($_POST['del_id'],"student",$mysqli)){
+                            goToRedirect('murid.php',0);
                         }
-                    }elseif (isset($_POST['edit-teacher'])) {
-                        goToRedirect('tambah-teacher.php?id='.base64_encode(date("d/m/y")."-".$_POST['del_id']),0);
+                    }elseif (isset($_POST['edit-murid'])) {
+                        goToRedirect('tambah-murid.php?id='.base64_encode(date("d/m/y")."-".$_POST['del_id']),0);
                     }
                 ?>
                 <div class="container-fluid">
-                    <?php $sql="SELECT * FROM `teacher` ";
+                    <?php $sql="SELECT * FROM `student` ";
 
-                        $qteacher=$mysqli->query($sql);
-                        $resc=$qteacher->num_rows;
+                        $qstudent=$mysqli->query($sql);
+                        $resc=$qstudent->num_rows;
                         $count=1;
-                        while ($resl=$qteacher->fetch_array()) {
+                        while ($resl=$qstudent->fetch_array()) {
                             
                             ?>
                              <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 mg-b-40">
@@ -179,8 +179,8 @@
                                         <div class="col-lg-8">
                                             <div class="contact-client-content">
                                                 <form method="post">
-                                                    <button class="btn btn-default pull-right" name="edit-teacher" type="submit"><span class="fa fa-bars fa-3"></a></span></button>
-                                                    <input type="hidden" name="del_id" value="<?php echo $resl['teacher_id']; ?>">
+                                                    <button class="btn btn-default pull-right" name="edit-murid" type="submit"><span class="fa fa-bars fa-3"></a></span></button>
+                                                    <input type="hidden" name="del_id" value="<?php echo $resl['student_id']; ?>">
                                                     <button name="delete" class="btn btn-danger pull-right" onclick="return confirm('Yakin ingin hapus data ini?')">
                                                     <span class="fa fa-trash fa-3"></span></button>
                                                 </form>
