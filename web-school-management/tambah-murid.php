@@ -163,7 +163,7 @@
                                                                     <div class="row">
                                                                         <div class="col-lg-12">
                                                                             <div class="login-horizental cancel-wp pull-right">
-                                                                                <button name="kembali" class="btn btn-white" type="submit"><a href="teacher.php">Kembali</a></button>
+                                                                                <button name="kembali" class="btn btn-white" type="submit"><a href="murid.php">Kembali</a></button>
                                                                                 <button class="btn btn-sm btn-primary login-submit-cs" name="tambah" type="submit">Tambah</button>
                                                                             </div>
                                                                         </div>
