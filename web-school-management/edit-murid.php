@@ -152,7 +152,7 @@
                                         <?php  if(isset($_POST['tambah'])){
                                                 $data=clearSQLInjection($mysqli, $_POST);
                                                 if($_FILES['foto']['name']!=="") {
-                                                    $save=fpstudent($_FILES,"student");
+                                                    $save=fpadmin($_FILES,"student");
                                                     if($resstudent['fb_photo']!==""){
                                                         unlink($resstudent['fb_photo']);
                                                     }
