@@ -49,7 +49,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <ul class="breadcome-menu">
-                                            <li><a href="keauangan-home.php">Keuangan</a> <span class="bread-slash">/</span>
+                                            <li><a href="#">Keuangan</a> <span class="bread-slash">/</span>
                                             </li>
                                             <li><span class="bread-blod">Pembayaran</span>
                                             </li>
@@ -61,38 +61,10 @@
                     </div>
                 </div>
             </div>
-            <?php include 'partials/header-menu-mobile.php'; ?>
-            <!-- Breadcome start-->
-            <div class="breadcome-area des-none">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="breadcome-list map-mg-t-40-gl shadow-reset">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                        <div class="breadcome-heading">
-                                            <form role="search" class="">
-                                                <!-- <input type="text" placeholder="Search..." class="form-control">
-                                                <a href=""><i class="fa fa-search"></i></a> -->
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                        <ul class="breadcome-menu">
-                                            <li><a href="keuangan-home.php">Keuangan</a> <span class="bread-slash">/</span>
-                                            </li>
-                                            <li><span class="bread-blod">Biaya</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> 
+    
 
 <div class="content-i">
+<div class="container-fluid">
     <div class="content-box">
 	<div class="element-wrapper">
 		<div class="os-tabs-w">
@@ -120,20 +92,20 @@
                 <div class="form-group label-floating is-select">
                     <label class="control-label">Class</label>
                     <div class="select">
-                        <select name="class_id" required="" onchange="return get_class_students(this.value)">
-                            <option value="">Select</option>
-                            <option value="1"><select>
-			                    <?php
-			                        $query = "select * from combobox";
-			                        $hasil = mysql_query($query);
-			                        while ($qtabel = mysql_fetch_assoc($hasil))
-			                        {
-				                         echo '<option value="'.$qtabel['class'].'">'.$qtabel['class'].'</option>';				
-			                        }
-			                    ?>
-		                     </select>
-                            </option>
+                        <select name="pilihKelas">
+                            <?php
+                                $conn = new mysqli($server, $user, $pass, $db) or die("Unable to connect");
+                                $query = "SELECT * FROM class";
+                                $result = mysqli_query($query);
+                                while($row=mysqli_fetch_array($result, MYSQLI_ASSOC))
+                                {
+                                    ?>
+                                    <option value="<?php echo $row['class_id']; ?>"><?php echo $row["name"]; ?></option>
+                                <?php
+                                }
+                            ?>
                             <option value="2">Pre-kindergarden</option>
+                            </select>
                     </div>
                 </div>
             </div>
