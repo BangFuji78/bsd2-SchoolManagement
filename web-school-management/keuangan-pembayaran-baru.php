@@ -94,17 +94,17 @@
                     <div class="select">
                         <select name="pilihKelas">
                             <?php
-                                $conn = new mysqli($server, $user, $pass, $db) or die("Unable to connect");
-                                $query = "SELECT * FROM class";
-                                $result = mysqli_query($query);
-                                while($row=mysqli_fetch_array($result, MYSQLI_ASSOC))
+                                //$conn = new mysqli($server, $user, $pass, $db) or die("Unable to connect");
+                                $sql = "SELECT * FROM class ";
+                                $query = $mysqli->query($sql) ;
+                                while($resClass=$query->fetch_array())
                                 {
                                     ?>
-                                    <option value="<?php echo $row['class_id']; ?>"><?php echo $row["name"]; ?></option>
+                                    <option value="<?php echo $resClass['class_id']; ?>"><?php echo $resClass['name']; ?></option>
                                 <?php
                                 }
-                            ?>
-                            <option value="2">Pre-kindergarden</option>
+                            ?><!-- 
+                            <option value="2">Pre-kindergarden</option> -->
                             </select>
                     </div>
                 </div>
