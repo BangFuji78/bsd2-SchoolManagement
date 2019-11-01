@@ -113,9 +113,20 @@
                 <div class="form-group label-floating is-select">
                     <label class="control-label">Student</label>
                     <div class="select">
-                        <select name="student_id" required="" id="student_selection_holder">
-                            <option value="">Select</option>
-                        </select>
+                        <select name="pilihSiswa">
+                            <?php
+                                //$conn = new mysqli($server, $user, $pass, $db) or die("Unable to connect");
+                                $sql = "SELECT * FROM student ";
+                                $query = $mysqli->query($sql) ;
+                                while($resClass=$query->fetch_array())
+                                {
+                                    ?>
+                                    <option value="<?php echo $resClass['student_id']; ?>"><?php echo $resClass['name']; ?></option>
+                                <?php
+                                }
+                            ?><!-- 
+                            <option value="2">Pre-kindergarden</option> -->
+                            </select>
                     </div>
                 </div>
             </div>
