@@ -95,9 +95,10 @@
                         <select name="pilihKelas">
                             <?php
                                 //$conn = new mysqli($server, $user, $pass, $db) or die("Unable to connect");
-                                $sql = "SELECT * FROM class ";
-                                $query = $mysqli->query($sql) ;
-                                while($resClass=$query->fetch_array())
+                                //jangan gunakan conn lagi tapi pakai yang biasanya yaitu $mysqli
+                                $sql = "SELECT * FROM class ";//$sql var yang di pakai untuk menaruh query agar bisa di bedakan bida pakai $aqlClass atau $sqlStudent
+                                $query = $mysqli->query($sql) ;// $query untuk menjalankan query dari $sql dimana dia hanya menjalankan dengan connector $mysqli
+                                while($resClass=$query->fetch_array())// $res atau $result adalah var untuk menyimpan data dari hasil $query agar lebih mudah traching errornya jika ada error
                                 {
                                     ?>
                                     <option value="<?php echo $resClass['class_id']; ?>"><?php echo $resClass['name']; ?></option>
