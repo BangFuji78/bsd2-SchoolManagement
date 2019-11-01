@@ -121,7 +121,12 @@
     <!-- form CSS
 		============================================ -->
     <link rel="stylesheet" href="css/form.css">
-    
+    <?php 
+        //Untuk display error jika ada error
+        // ini_set('display_errors', 1);
+        // ini_set('display_startup_errors', 1);
+        // error_reporting(E_ALL);
+     ?>
 </head>
 
 <body class="materialdesign">
@@ -232,10 +237,11 @@
                         <?php
                             if(isset($_POST['login'])){
                                 $data=clearSQLInjection($mysqli,$_POST);
-                                $admin=$mysqli->query("SELECT * FROM `admin` where username='".$data['username']."' and password='".md5($data['password'])."'");
+                                $sql="SELECT * FROM `admin` where username='".$data['username']."' and password='".md5($data['password'])."'";
+                                $admin=$mysqli->query($sql);
                                 $teacher=$mysqli->query("SELECT * FROM `teacher` where username='".$data['username']."' and password='".md5($data['password'])."'");
                                 $student=$mysqli->query("SELECT * FROM `student` where username='".$data['username']."' and password='".md5($data['password'])."'");
-                                $parent=$mysqli->query("SELECT * FROM `teacher` where username='".$data['username']."' and password='".md5($data['password'])."'");
+                                $parent=$mysqli->query("SELECT * FROM `parent` where username='".$data['username']."' and password='".md5($data['password'])."'");
                                 // echo var_dump();
                                 if($res=$admin->fetch_assoc()){
                                     gotoRedirect("index.php",0);
@@ -258,9 +264,8 @@
                                     // echo var_dump($res['username']);
                                 }else{
                                   // echo '<h1>Login gagal</h1>';
-
-                                   alert("Login Gagal");
-
+                                    $error=var_dump($mysqli->error);
+                                   alert("Login Gagal-".$error);
 
                                 }
                                
