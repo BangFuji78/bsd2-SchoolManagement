@@ -81,6 +81,18 @@
                                                 <a href=""><i class="fa fa-search"></i></a>
                                             </form>
                                         </div>
+
+                                        <!-- combobox Kelas -->
+                                        <select name="loads" id="loads">
+                                        <!-- Un untuk nembakno ke tabel Section yapa? -->
+                                        <?php while($res1 = mysql_fetch_array($result)) { ?>
+                                        <option value="<?php echo $res1['LoadNumber'] ?>"><?php echo $res1['LoadNumber'] ?></option>
+                                        </select>
+                                        <?php } ?>
+                                               
+
+                                        <!-- /Combobox kelas -->
+
                                     </div>
                                     <div class="col-lg-6">
                                        
