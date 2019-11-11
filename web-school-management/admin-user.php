@@ -125,11 +125,11 @@
                         $count=0;
                         while ($resl=$qadmin->fetch_array()) {
                             $count++;
-                            if($count==='1' || $count/2===0 ){
-                                echo "<div class='row'>";
-                            }
+                            // if($count==='1' || $count/2===0 ){
+                            //     echo "<div class='row'>";
+                            // }
                             ?>
-                             <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
+                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mg-b-40">
                                 <div class="contact-client-single ct-client-b-mg-30 ct-client-b-mg-30-n shadow-reset">
                                     <div class="row">
                                         <div class="col-lg-4">
@@ -171,9 +171,9 @@
 
                     <?php
                         
-                        if ($count/2===0 || $count===$resc) {
-                            echo "</div>";
-                        }
+                        // if ($count/2===0 || $count===$resc) {
+                        //     echo "</div>";
+                        // }
                         
                         }
                      ?>

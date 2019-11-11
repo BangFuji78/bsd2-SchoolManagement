@@ -201,19 +201,20 @@
                     <label class="control-label">Class</label>
                     <div class="select">
                         <select name="class_id" required="" class="class_id" onchange="return get_class_students_mass(this.value)">
-                            <option value="">Select</option>
-                                                            <option value="1">Head Start</option>
-                                                            <option value="2">Pre-kindergarden</option>
-                                                            <option value="3">Kindergarden</option>
-                                                            <option value="4">First grade</option>
-                                                            <option value="5">Second grade</option>
-                                                            <option value="6">Third grade</option>
-                                                            <option value="7">Fourth grade</option>
-                                                            <option value="8">Fifth grade</option>
-                                                            <option value="9">Sixth grade</option>
-                                                            <option value="10">Seventh grade</option>
-                                                            <option value="11">Eighth grade</option>
-                                                    </select>
+                        <select name="pilihSiswa">
+                            <?php
+                                //$conn = new mysqli($server, $user, $pass, $db) or die("Unable to connect");
+                                $sql = "SELECT * FROM student ";
+                                $query = $mysqli->query($sql) ;
+                                while($resClass=$query->fetch_array())
+                                {
+                                    ?>
+                                    <option value="<?php echo $resClass['student_id']; ?>"><?php echo $resClass['name']; ?></option>
+                                <?php
+                                }
+                            ?><!-- 
+                            <option value="2">Pre-kindergarden</option> -->
+                            </select>
                     </div>
                 </div>
             </div>

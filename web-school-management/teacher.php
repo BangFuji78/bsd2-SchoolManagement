@@ -85,7 +85,7 @@
                                     <div class="col-lg-6">
                                        
                                         <ul class="breadcome-menu">
-                                            <li><a href="#">Home</a> <span class="bread-slash">/</span>
+                                            <li><a href="#">Users</a> <span class="bread-slash">/</span>
                                             </li>
                                             <li><span class="bread-blod">Teacher</span>
                                             </li>
