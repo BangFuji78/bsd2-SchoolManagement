@@ -116,7 +116,6 @@
                     <div class="select">
                         <select name="pilihSiswa">
                             <?php
-                                //$conn = new mysqli($server, $user, $pass, $db) or die("Unable to connect");
                                 $sql = "SELECT * FROM student ";
                                 $query = $mysqli->query($sql) ;
                                 while($resClass=$query->fetch_array())
