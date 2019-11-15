@@ -86,4 +86,65 @@ function del($id,$table,$mysqli){
     //echo $sql;
   }
 }
+    
+	function createSingle()
+	{
+		$insert_name = array(
+			'name' => $this->input->post('paymentName'),
+			'start_date' 	=> $this->input->post('startDate'),
+			'end_date' 		=> $this->input->post('endDate'),
+			'total_amount' 	=> $this->input->post('totalAmount'),
+			'type'			=> 1
+		);
+
+		$this->db->insert('payment_name', $insert_name);
+		$payment_name_id = $this->db->insert_id();
+
+		$insert_data = array(									
+			'class_id' 		=> $this->input->post('className'),
+			'section_id' 	=> $this->input->post('sectionName'),
+			'student_id' 	=> $this->input->post('studentName'),			
+			'payment_name_id' => $payment_name_id
+		);
+		$status = $this->db->insert('payment', $insert_data);		
+		return ($status === true ? true : false);
+	}
+
+	/*
+	*---------------------------------------------------
+	* Insert the bulk payment info into the database
+	*---------------------------------------------------
+	*/
+	function createBulk()
+	{
+		if($this->input->post('studentId')) {
+			$insert_name = array(
+				'name' => $this->input->post('paymentName'),
+				'start_date' 	=> $this->input->post('startDate'),
+				'end_date' 		=> $this->input->post('endDate'),
+				'total_amount' 	=> $this->input->post('totalAmount'),
+				'type'			=> 2
+			);
+
+			$this->db->insert('payment_name', $insert_name);
+			$payment_name_id = $this->db->insert_id();
+
+			for($x = 1; $x <= count($this->input->post('studentId')); $x++) {								
+				$insert_data = array(									
+					'class_id' 		=> $this->input->post('className'),
+					'section_id' 	=> $this->input->post('sectionName'),
+					'student_id' 	=> $this->input->post('studentId')[$x],			
+					'payment_name_id' => $payment_name_id
+				);
+
+				$status = $this->db->insert('payment', $insert_data);
+			}
+						
+			return ($status === true ? true : false);
+		} 
+		else {
+			return false;
+		}		
+	}	
+
 ?>
