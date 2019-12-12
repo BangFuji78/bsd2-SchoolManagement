@@ -156,3 +156,6 @@
         ============================================ -->
     <script src="js/flot/Chart.min.js"></script>
     <script src="js/flot/dashtwo-flot-active.js"></script>
+        <!-- mCustomScrollbar JS
+        ============================================ -->
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>

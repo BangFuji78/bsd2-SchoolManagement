@@ -112,6 +112,9 @@
     <!-- form CSS
 		============================================ -->
     <link rel="stylesheet" href="css/form.css">
+    <!-- tabs CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/tabs.css">
   <?php
     
 

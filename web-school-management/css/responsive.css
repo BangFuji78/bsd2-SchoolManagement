@@ -412,6 +412,7 @@ ul.message-list-menu li .message-info {
 }
 .fixed-header-top{
 	position:relative;
+	margin-left: 29px;
 }
 .des-none{
 	display:block;
@@ -435,6 +436,7 @@ ul.message-list-menu li .message-time {
 }
 .fixed-header-top {
 	left: 0px;
+	margin-left: 29px;
 }
 .darklayout .knob-single input {
 	right: 120px;
@@ -800,6 +802,7 @@ ul.message-list-menu li .message-info {
 }
 .fixed-header-top{
 	position:relative;
+	margin-left: 29px;
 }
 .des-none{
 	display:block;
@@ -854,6 +857,7 @@ ul.message-list-menu li .message-time {
 }
 .fixed-header-top {
 	left: 0px;
+	margin-left: 29px;
 }
 .darklayout .knob-single input {
 	right: 120px;

@@ -152,7 +152,7 @@
                                         <?php  if(isset($_POST['tambah'])){
                                                 $data=clearSQLInjection($mysqli, $_POST);
                                                 if($_FILES['foto']['name']!=="") {
-                                                    $save=fpadmin($_FILES,"student");
+                                                    $save=fpadmin($_FILES,"student");//nama functionnya tetap fpadmin yang berbeda adalah type setelah "$_files,"
                                                     if($resstudent['fb_photo']!==""){
                                                         unlink($resstudent['fb_photo']);
                                                     }
