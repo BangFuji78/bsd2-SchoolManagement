@@ -1,5 +1,5 @@
 <div class="header-top-area">
-    <div class="fixed-header-top" style="margin-left: 29px; ">
+    <div class="fixed-header-top" >
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-1 col-md-6 col-sm-6 col-xs-12">

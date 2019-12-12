@@ -108,14 +108,17 @@
                                                                 $sqlAdmin="INSERT INTO `class`(`name`, `teacher_id`) VALUES ('".$data['nama']."','".$data['guru']."')";
                                                                 ECHO var_dump($sqlAdmin);
                                                                 if($qadmin=$mysqli->query($sqlAdmin)){
-                                                                    unset($_SESSION['tambah']['user']);
-                                                                    gotoRedirect('pengaturan-akademik.php',0);
+                                                                    $sqlsec="select * from class where name='".$data['nama']."' and teacher_id='".$data['guru']."'";
+                                                                    $query=$mysqli->query($sqlsec);
+                                                                    $class=$query->fetch_assoc();
+                                                                    $sqlsec="INSERT INTO `section`( `name`, `class_id`) VALUES ('A','".$class['class_id']."')";
+                                                                    if($qadmin=$mysqli->query($sqlsec)){
+                                                                        unset($_SESSION['tambah']['user']);
+                                                                        gotoRedirect('pengaturan-akademik.php',0);
+                                                                    }
                                                                 }else{
                                                                     echo var_dump("test");
                                                                 }
-
-                                                              
-                                                              
                                                             }
                                                             if(isset($_POST['kembali'])){
                                                                 gotoRedirect('pengaturan-akademik.php',0);

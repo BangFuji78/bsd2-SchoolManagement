@@ -144,12 +144,12 @@
                                                                                         $sql="SELECT * FROM `class`";
                                                                                         $query=$mysqli->query($sql);
                                                                                         
-                                                                                        while ($section=$query->fetch_array()) {
+                                                                                        while ($kelas=$query->fetch_array()) {
                                                                                 ?>
-                                                                                    <option value="<?php echo $section['class_id']; ?>" selected="<?php if ($section['class_id']===$dataid) {
-                                                                                        echo "true";
-                                                                                    } ?>">
-                                                                                    <?php echo $section['name']; ?>
+                                                                                    <option value="<?php echo $kelas['class_id']; ?>" <?php if ($kelas['class_id']===$dataid) {
+                                                                                        echo "selected=true";
+                                                                                    } ?>>
+                                                                                    <?php echo $kelas['name']; ?>
                                                                                     </option>
                                                                                 <?php
                                                                                         }
@@ -159,12 +159,17 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-lg-4 pull-right">
-                                                                            <button class="btn btn-sm btn-primary login-submit-cs" name="tambah" type="submit">Tampilkan Hasil</button>
+                                                                            <button class="btn btn-sm btn-primary login-submit-cs" name="filter" type="submit">Tampilkan Hasil</button>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </form>
+                                                        <?php 
+                                                            if(isset($_POST['filter'])){
+                                                                goToRedirect("murid.php?id=".base64_encode(date("d/m/y")."-".$_POST['kelas']),0);
+                                                            }
+                                                         ?>
                                                     </div>
                                                 </div>
                                             </div>
@@ -226,7 +231,7 @@
                             <div class="admintab-wrap mg-b-40">
                                 <ul class="nav nav-tabs custom-menu-wrap custon-tab-menu-style1">
                                     <?php 
-                                        $sql="SELECT section.`section_id`, section.`name`, class.`class_id` FROM section, class WHERE section.`class_id` = class.`class_id`";
+                                        $sql="SELECT section.`section_id`, section.`name`, class.`class_id` FROM section, class WHERE section.`class_id` = class.`class_id` and class.class_id='".$dataid."'";
                                         $query=$mysqli->query($sql);
                                         $kelas;
                                         while ($rombel=$query->fetch_array()) {
@@ -236,9 +241,7 @@
                                     <?php
                                             $kelas[] = $rombel['section_id'];
                                         }
-                                     ?>
-                                      <li ><a data-toggle="tab" href="#TabDetails"><span class="fa fa-users"></span> test</a>
-                                            </li>   
+                                     ?> 
                                 </ul>
                                 <div class="tab-content">
                                     <?php foreach ($kelas as $id => $value) {
@@ -314,10 +317,7 @@
                                         </div>
                                     <?php
                                     } ?>
-                                    <div id="TabDetails" class="tab-pane animated flipInX custon-tab-style1">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-                                        <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
