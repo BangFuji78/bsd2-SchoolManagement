@@ -54,6 +54,8 @@
                                     <div id="rombel" class="tab-pane animated flipInX custon-tab-style1 active">
                                         <div class="row">
                                         <?php 
+                                            $celas=0;
+                                            $nCelas="";
                                             if(isset($_SESSION['id']) && $_SESSION['id'] !== "" ){
                                                 $dataid=$_SESSION['id'];
                                                 
@@ -86,11 +88,16 @@
                                                                                                 $query=$mysqli->query($sql);
                                                                                                 
                                                                                                 while ($kelas=$query->fetch_array()) {
+                                                                                                    $celas=$kelas['teacher_id'];
+                                                                                                    
                                                                                         ?>
                                                                                             <option value="<?php echo $kelas['class_id']; ?>" <?php if ($kelas['class_id']===$dataid) {
                                                                                                 echo "selected=true";
+                                                                                                $nCelas=$kelas['name'];
                                                                                             } ?>>
-                                                                                            <?php echo $kelas['name']; ?>
+                                                                                            <?php echo $kelas['name'];
+                                                                                                        
+                                                                                             ?>
                                                                                             </option>
                                                                                         <?php
                                                                                                 }
@@ -144,7 +151,7 @@
 
 
                                                                     $sql="SELECT * FROM `section` where class_id='".$dataid."' ";
-
+                                                                        
                                                                         $qadmin=$mysqli->query($sql);
                                                                         $resc=$qadmin->num_rows;
                                                                         $count=0;
@@ -160,7 +167,8 @@
                                                                                         <div class="col-lg-2">
                                                                                             <center>
                                                                                             <div class="btn-primary" style="width:40px;height:40px; font: 24pt arial; border: 1pt solid; border-radius: 40px; vertical-align: middle; text-align: center; ">
-                                                                                                <?php echo $resl['name']; ?>
+                                                                                                <?php 
+                                                                                                     echo $resl['name'];   ?>
                                                                                             </div>
                                                                                             </center>
                                                                                         </div>
@@ -172,12 +180,34 @@
                                                                                                     <button class="btn btn-default pull-right" name="edit" type="submit"><span class="fa fa-bars fa-3" ></span></button>
                                                                                                     <button name="delete" class="btn btn-danger pull-right" onclick="return confirm('Yakin ingin hapus data ini?')"><span class="fa fa-trash fa-3"></span></button>
                                                                                                 </form>
-                                                                                                <h4><i class="fa fa-graduation-cap"></i> Guru : </h4>
+                                                                                                <h4><i class="fa fa-graduation-cap"></i> Guru : <?php 
+                                                                                                            if($resc<=1){
+                                                                                                        $sql="select * from teacher where teacher_id='".$celas."'";
+                                                                                                        $query=$mysqli->query($sql);
+                                                                                                        $guru=$query->fetch_assoc();
+                                                                                                        //echo var_dump($sql);
+                                                                                                    }else{
+                                                                                                        $sql="select * from teacher where teacher_id='".$resl['teacher_id']."'";
+                                                                                                        $query=$mysqli->query($sql);
+                                                                                                        $guru=$query->fetch_assoc();
+                                                                                                        echo var_dump($sql);
+                                                                                                        } 
+                                                                                                        echo $guru['name'];
+                                                                                                 ?></h4>
                                                                                             </div>
                                                                                             <div class="contact-client-address">
-                                                                                                <h5><i class="fa fa-users"></i> Murid :</h5>
+                                                                                                <h5><i class="fa fa-users"></i> Murid :
+                                                                                                        <?php $sql="select count(enroll.student_id) as 'count' from enroll, class, section where class.class_id = '".$dataid."' and section.section_id = '".$resl['section_id']."' and enroll.class_id= class.class_id and enroll.section_id= section.section_id";
+                                                                                                            $query=$mysqli->query($sql);
+                                                                                                            $siswa=$query->fetch_assoc();
+                                                                                                            echo $siswa['count'];
+                                                                                                         ?>
+                                                                                                </h5>
                                                                                                 <h5><i class="fa fa-building"></i> Jenjang :
-                                                                                                <a href="" class="btn btn-primary"></a></h5>
+
+                                                                                                <a href="" class="btn btn-primary"> <?php 
+                                                                                                        echo $nCelas;
+                                                                                                 ?></a></h5>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
