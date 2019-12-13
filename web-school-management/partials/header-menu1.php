@@ -162,19 +162,19 @@
                             <li class="nav-item">
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
                                     <span class="adminpro-icon adminpro-user-rounded header-riht-inf"></span>
-                                    <span class="admin-name">Advanda Cro</span>
+                                    <span class="admin-name"><?php echo $_SESSION['user_online']['name']; ?></span>
                                     <span class="author-project-icon adminpro-icon adminpro-down-arrow"></span>
                                 </a>
                                 <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated flipInX">
-                                    <li><a href="#"><span class="adminpro-icon adminpro-home-admin author-log-ic"></span>My Account</a>
+                                   <!--  <li><a href="#"><span class="adminpro-icon adminpro-home-admin author-log-ic"></span>My Account</a>
                                     </li>
                                     <li><a href="#"><span class="adminpro-icon adminpro-user-rounded author-log-ic"></span>My Profile</a>
                                     </li>
                                     <li><a href="#"><span class="adminpro-icon adminpro-money author-log-ic"></span>User Billing</a>
                                     </li>
                                     <li><a href="#"><span class="adminpro-icon adminpro-settings author-log-ic"></span>Settings</a>
-                                    </li>
-                                    <li><a href="#"><span class="adminpro-icon adminpro-locked author-log-ic"></span>Log Out</a>
+                                    </li> -->
+                                    <li><a href="logout.php"><span class="adminpro-icon adminpro-locked author-log-ic"></span>Log Out</a>
                                     </li>
                                 </ul>
                             </li>
