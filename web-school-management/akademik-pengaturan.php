@@ -140,7 +140,7 @@
                                                                                         </form>
                                                                                         <?php if(isset($_POST['tambah'])){
                                                                                                 $_SESSION['tambah']['user']=$_POST['user'];
-                                                                                                goToRedirect('tambah-kelas.php',0);
+                                                                                                goToRedirect('tambah-rombel.php?idclass='.base64_encode(date("d/m/y")."-".$dataid),0);
                                                                                             } ?>
                                                                                         </div>
                                                                                     </div>
@@ -177,8 +177,8 @@
                                                                                                 <form method="post">
                                                                                                     
                                                                                                     <input type="hidden" name="del_id" value="<?php echo $resl['admin_id']; ?>">
-                                                                                                    <button class="btn btn-default pull-right" name="edit" type="submit"><span class="fa fa-bars fa-3" ></span></button>
-                                                                                                    <button name="delete" class="btn btn-danger pull-right" onclick="return confirm('Yakin ingin hapus data ini?')"><span class="fa fa-trash fa-3"></span></button>
+                                                                                                    <a href="tambah-rombel.php?id=<?php echo base64_encode(date("d/m/y")."-".$resl['section_id']); ?>" class="btn btn-default pull-right"><span class="fa fa-bars fa-3" ></span></a><br>
+                                                                                                    <!-- <button name="delete" class="btn btn-danger pull-right" onclick="return confirm('Yakin ingin hapus data ini?')"><span class="fa fa-trash fa-3"></span></button> -->
                                                                                                 </form>
                                                                                                 <h4><i class="fa fa-graduation-cap"></i> Guru : <?php 
                                                                                                             if($resc<=1){
@@ -190,7 +190,7 @@
                                                                                                         $sql="select * from teacher where teacher_id='".$resl['teacher_id']."'";
                                                                                                         $query=$mysqli->query($sql);
                                                                                                         $guru=$query->fetch_assoc();
-                                                                                                        echo var_dump($sql);
+                                                                                                        //echo var_dump($sql);
                                                                                                         } 
                                                                                                         echo $guru['name'];
                                                                                                  ?></h4>
